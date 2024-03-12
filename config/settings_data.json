@@ -142,11 +142,11 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#000000",
-          "button": "{{ shop.brand.colors.primary[1].background }}",
+          "text": "#212121",
+          "button": "#212121",
           "button_label": "#ffffff",
-          "secondary_button_label": "#000000",
-          "shadow": "#ff2020"
+          "secondary_button_label": "#212121",
+          "shadow": "#212121"
         }
       },
       "scheme-2": {
