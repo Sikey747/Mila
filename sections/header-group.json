@@ -44,7 +44,7 @@
         "transparent": true,
         "svg_logo": true,
         "svg_logo_content": "",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "scheme-5",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
