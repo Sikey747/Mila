@@ -32,16 +32,27 @@
             "link": "",
             "show_text_box": true
           }
+        },
+        "slide_zqezCA": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "new-prod",
+            "heading": "Image slide",
+            "button_label": "Button label",
+            "link": "",
+            "show_text_box": true
+          }
         }
       },
       "block_order": [
         "slide_kgjeQi",
         "slide_CkKkCF",
-        "slide_rnGj64"
+        "slide_rnGj64",
+        "slide_zqezCA"
       ],
       "settings": {
         "auto_rotate": false,
-        "change_slides_speed": 6,
+        "change_slides_speed": 10,
         "color_scheme": ""
       }
     }
