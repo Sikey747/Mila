@@ -161,7 +161,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} page-width_header header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %}  header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %} page-width_header">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -179,23 +179,22 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-
           
           {% if section.settings.svg_logo %}
-             <div class="header__heading-logo-wrapper ">
-  {% render "icon-logo" %}
-  </div>
+            <div class="header__heading-logo-wrapper ">
+              {% render "icon-logo" %}
+            </div>
             {% if  section.settings.svg_logo_content %}
-                   <div class="header__heading-logo-wrapper ">
+              <div class="header__heading-logo-wrapper ">
                 {{ section.settings.svg_logo_content }}
-                </div>
-                  {% else %}
+              </div>
+          {% else %}
                     
             {% endif %}
 
               {% else %}
 
-                           {%- if settings.logo != blank -%}
+            {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
@@ -218,8 +217,6 @@
           {% endif %}
           
 
- 
-
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -235,6 +232,8 @@
         endif
       endif
     %}
+      {% render 'header-mega-menu' %}
+      {% render 'header-mega-menus' %}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -350,7 +349,7 @@
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
 
-      <svg class="iconTrans" xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="none" viewBox="0 0 44 44">
+      <svg class="icon iconTrans" xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="none" viewBox="0 0 44 44">
         <path stroke="currentColor" stroke-width="1.5" d="M4 16h36l-3.6 23H7.6L4 16ZM22 6v10"/>
       </svg>
 
@@ -625,7 +624,7 @@
       "default": true,
       "label": "Castome Svg logo enable"
     },
-       {
+    {
       "type": "liquid",
       "id": "svg_logo_content",
       "label": "Castome Svg logo conten"
@@ -737,6 +736,19 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "name": "Mega Menu Cards",
+      "type": "mega_menu_cards",
+      "limit": 4,
+      "settings": [
+        {
+          "label": "Mega Menu Card",
+          "type": "collection",
+          "default": "Card collectrn in mega menu",
+          "id": "mega_menu_card"
+        }
+      ]
     }
   ]
 }

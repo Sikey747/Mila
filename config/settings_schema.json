@@ -102,6 +102,23 @@
     ]
   },
   {
+    "name": "Additional colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_additional_primary",
+        "label": "Additional colors primary",
+        "default": "#b79987"
+      },
+      {
+        "type": "color",
+        "id": "color_additional_secondary",
+        "label": "Additional colors secondary",
+        "default": "#dadada"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {

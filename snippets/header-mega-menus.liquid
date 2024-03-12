@@ -1,0 +1,118 @@
+<div class="mege-menu">
+  <div class="mege-menu__page-width">
+    <div class="mege-menu__link-list">
+      {% for links in section.settings.menu.links %}
+        {% if links.links.size > 0 and links.title != 'Demos' %}
+          <ul>
+            <h4>{{ links.title }}</h4>
+            {% for link in links.links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="mege-menu__cads">
+      {% for card in section.blocks %}
+        {% if card.type == 'mega_menu_cards' %}
+          {{ card.settings.mega_menu_card.title }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (any-hover: hover) {
+    header:hover .mege-menu {
+      top: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+    @media (max-width: 990px) {
+      .mege-menu {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 990px) {
+    .menu_hover.content-for-layout::after {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  .content-for-layout::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-300);
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .mege-menu {
+    position: absolute;
+    visibility: hidden;
+    content: '';
+    top: -150%;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(var(--color-background));
+    padding: 40px 90px;
+    transition: all 0.3s ease-in-out;
+  }
+  .mege-menu__page-width {
+    display: flex;
+    gap: 1rem;
+  }
+  .mege-menu__link-list,
+  .mege-menu__cads {
+    display: flex;
+    gap: 1.125rem;
+    justify-content: space-between;
+  }
+  .mege-menu__link-list {
+    flex: 1 1 45.6%;
+  }
+  .mege-menu__link-list ul {
+    max-width: 16.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+  .mege-menu__link-list ul h4 {
+    max-width: 16.25rem;
+    font-size: 0.9375rem;
+    color: var(--gray-500);
+    margin-bottom: 0.625rem;
+  }
+
+  .mege-menu__cads {
+    flex: 1 1 54.4%;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('header').addEventListener('mouseenter', () => {
+      document.querySelector('main').classList.add('menu_hover');
+    });
+    document.querySelector('header').addEventListener('mouseleave', () => {
+      document.querySelector('main').classList.remove('menu_hover');
+    });
+  });
+</script>
