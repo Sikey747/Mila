@@ -11,10 +11,18 @@
             "text": "Welcome to our store",
             "link": ""
           }
+        },
+        "announcement_UYciMA": {
+          "type": "announcement",
+          "settings": {
+            "text": "Black Friday Cyber Monday Sales!",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_UYciMA"
       ],
       "settings": {
         "color_scheme": "scheme-4",
