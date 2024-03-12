@@ -2,40 +2,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter_BAEW9C": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_iKd48a": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_pmz7Jj": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
-          }
-        },
-        "email_form_URPrVD": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "heading_iKd48a",
-        "paragraph_pmz7Jj",
-        "email_form_URPrVD"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -44,12 +10,6 @@
           "settings": {
             "heading": "Quick links",
             "menu": "footer"
-          }
-        },
-        "brand_information_UtGaYP": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
           }
         },
         "image_rppMya": {
@@ -62,13 +22,12 @@
       },
       "block_order": [
         "link_list_GbCQNB",
-        "brand_information_UtGaYP",
         "image_rppMya"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-4",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Newsletter",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
@@ -76,13 +35,12 @@
         "payment_enable": true,
         "show_policy": false,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
-    "newsletter_BAEW9C",
     "footer"
   ]
 }
