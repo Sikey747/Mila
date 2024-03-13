@@ -28,6 +28,26 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_cards_8Lnxja": {
+          "type": "mega_menu_cards",
+          "settings": {
+            "mega_menu_card": "maximum-impact",
+            "mega_menu_card_btn_text": "Shop card"
+          }
+        },
+        "mega_menu_cards_e6Eqat": {
+          "type": "mega_menu_cards",
+          "settings": {
+            "mega_menu_card": "bages",
+            "mega_menu_card_btn_text": "Shop card"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_cards_8Lnxja",
+        "mega_menu_cards_e6Eqat"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
