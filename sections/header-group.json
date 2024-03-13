@@ -8,22 +8,12 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        },
-        "announcement_UYciMA": {
-          "type": "announcement",
-          "settings": {
             "text": "Black Friday Cyber Monday Sales!",
             "link": ""
           }
         }
       },
-      "block_order": [
-        "announcement-bar-0",
-        "announcement_UYciMA"
-      ],
+      "block_order": ["announcement-bar-0", "announcement_UYciMA"],
       "settings": {
         "color_scheme": "scheme-4",
         "show_line_separator": false,
@@ -56,8 +46,5 @@
       }
     }
   },
-  "order": [
-    "announcement-bar",
-    "header"
-  ]
+  "order": ["announcement-bar", "header"]
 }

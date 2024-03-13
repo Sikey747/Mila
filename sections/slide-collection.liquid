@@ -1,5 +1,5 @@
 {% liquid
-  if (section.settings.auto_rotate)
+  if section.settings.auto_rotate
     assign autoplay = true
   endif
 
@@ -103,7 +103,7 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const autoplay = document.querySelector('[data-autoplay="true"]');
-    const speed = document.querySelector('[data-speed]').getAttribute('data-speed');
+    const speed = +document.querySelector('[data-speed]').getAttribute('data-speed');
 
     if (autoplay) {
       const configAutoplay = {
