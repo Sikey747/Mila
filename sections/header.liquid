@@ -232,7 +232,6 @@
         endif
       endif
     %}
-      {% render 'header-mega-menu' %}
       {% render 'header-mega-menus' %}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
@@ -745,8 +744,13 @@
         {
           "label": "Mega Menu Card",
           "type": "collection",
-          "default": "Card collectrn in mega menu",
           "id": "mega_menu_card"
+        },
+          {
+          "label": "Mega Menu Button text",
+          "type": "text",
+          "id": "mega_menu_card_btn_text",
+          "default": "Shop card"
         }
       ]
     }

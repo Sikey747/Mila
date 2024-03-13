@@ -1,8 +1,8 @@
 <div class="mege-menu">
-  <div class="mege-menu__page-width">
+  <div class="mege-menu__page-width page-width">
     <div class="mege-menu__link-list">
       {% for links in section.settings.menu.links %}
-        {% if links.links.size > 0 and links.title != 'Demos' %}
+        {% if links.links.size > 0 %}
           <ul>
             <h4>{{ links.title }}</h4>
             {% for link in links.links %}
@@ -18,7 +18,14 @@
     <div class="mege-menu__cads">
       {% for card in section.blocks %}
         {% if card.type == 'mega_menu_cards' %}
-          {{ card.settings.mega_menu_card.title }}
+          <div class="mege-menu__cad ibg">
+            {{ card.settings.mega_menu_card.image.src | image_url: width: '500px' | image_tag: loading: 'lazy' }}
+            <div class="mege-menu__cad_info">
+              <p>{{ card.settings.mega_menu_card.tags.first }}</p>
+              {{ card.settings.mega_menu_card.title }}
+              <button class="button button--primary">{{ card.settings.mega_menu_card_btn_text }}</button>
+            </div>
+          </div>
         {% endif %}
       {% endfor %}
     </div>
@@ -26,24 +33,37 @@
 </div>
 
 <style>
-  @media (any-hover: hover) {
+  /* @media (any-hover: hover) {
     header:hover .mege-menu {
       top: 100%;
       opacity: 1;
       visibility: visible;
+      pointer-events: all;
     }
-    @media (max-width: 990px) {
-      .mege-menu {
-        display: none;
-      }
+
+  } */
+
+  header.mega_menu_open .mege-menu {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  @media (max-width: 990px) {
+    .mege-menu {
+      display: none;
     }
   }
 
   @media (min-width: 990px) {
-    .menu_hover.content-for-layout::after {
+    .mega_menu_open.content-for-layout::after {
       opacity: 1;
       visibility: visible;
       pointer-events: all;
+    }
+    .mega-menu__content {
+      display: none;
     }
   }
 
@@ -64,15 +84,17 @@
 
   .mege-menu {
     position: absolute;
-    visibility: hidden;
     content: '';
+    visibility: hidden;
     top: -150%;
-    left: 0;
     opacity: 0;
+    left: 0;
     width: 100%;
     height: auto;
     background-color: rgb(var(--color-background));
-    padding: 40px 90px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-inline: clamp(1rem, 16.087vw - 8.853rem, 5.625rem);
     transition: all 0.3s ease-in-out;
   }
   .mege-menu__page-width {
@@ -89,7 +111,7 @@
     flex: 1 1 45.6%;
   }
   .mege-menu__link-list ul {
-    max-width: 16.25rem;
+    flex: 1 1 16.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
@@ -102,17 +124,50 @@
   }
 
   .mege-menu__cads {
+    display: flex;
+    gap: 1.125rem;
     flex: 1 1 54.4%;
+  }
+
+  .mege-menu__cad {
+    position: relative;
+    flex: 1 1 20.1875rem;
+    min-height: 19.4375rem;
+  }
+
+  .mege-menu__cad_info {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3125rem;
+    height: 100%;
+    color: rgb(var(--color-background));
+  }
+
+  .mege-menu__cad_info .button {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .menu-drawer__menu .list-menu {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 </style>
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('header').addEventListener('mouseenter', () => {
-      document.querySelector('main').classList.add('menu_hover');
-    });
-    document.querySelector('header').addEventListener('mouseleave', () => {
-      document.querySelector('main').classList.remove('menu_hover');
+    const megaMenuBtn = document.querySelectorAll('details.mega-menu');
+    megaMenuBtn.forEach((el) => {
+      el.addEventListener('click', () => {
+        document.querySelector('header').classList.toggle('mega_menu_open');
+        document.querySelector('.content-for-layout').classList.toggle('mega_menu_open');
+      });
     });
   });
 </script>

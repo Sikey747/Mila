@@ -156,9 +156,9 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 } */
 
 @media screen and (min-width: 46.875rem) {
-  .page-width {
+  /* .page-width {
     padding: 0 5rem;
-  }
+  } */
 
   .header.page-width,
   .utility-bar__grid.page-width {
@@ -693,8 +693,8 @@ summary {
 
 summary .icon-caret {
   height: 0.45rem;
-  padding-top: -36px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 5px;
+  translate: 0 2px;
 }
 
 summary::-webkit-details-marker {
@@ -2159,16 +2159,15 @@ product-info .loading__spinner:not(.hidden) ~ *,
   position: absolute;
   background-color: transparent;
   color: rgb(var(--color-text));
-  height: 1.7rem;
-  width: 1.7rem;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  bottom: 0.8rem;
-  left: 33%;
+  bottom: 23%;
+  left: 44%;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
+  transition: color 0.3s ease-in-out;
 }
 
 /* utility-bar */
@@ -2926,9 +2925,9 @@ details[open] > .header__submenu {
   text-underline-offset: 0.3rem;
 }
 
-details[open] > .header__menu-item {
+/* details[open] > .header__menu-item {
   text-decoration: underline;
-}
+} */
 
 details[open]:hover > .header__menu-item {
   text-decoration-thickness: 0.2rem;
@@ -3718,4 +3717,22 @@ a {
 
 .shopify-section-group-header-group {
   z-index: 50;
+}
+
+header:hover .cart-count-bubble {
+  color: rgb(var(--color-foreground));
+}
+summary.list-menu__item.menu-drawer__menu-item.list-menu__item.link.link--text {
+  padding-right: 0rem;
+}
+summary.list-menu__item.menu-drawer__menu-item.list-menu__item.link.link--text:hover {
+  color: var(--primary-color);
+}
+summary.list-menu__item.menu-drawer__menu-item.list-menu__item.link.link--text:hover path {
+  fill: var(--primary-color);
+}
+.menu-drawer__menu-item.list-menu__item.link.link--text.focus-inset:hover {
+  color: var(--primary-color);
+}
+.header__menu-item.list-menu__item.link.focus-inset svg {
 }
