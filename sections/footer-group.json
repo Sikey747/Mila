@@ -25,26 +25,29 @@
             "heading": "Quick links",
             "menu": "footer"
           }
+        },
+        "newsletter_CUzfia": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Newsletter",
+            "description": "Sign up for our newsletter to only receive good things."
+          }
         }
       },
       "block_order": [
         "text_66nk48",
         "link_list_GbCQNB",
-        "link_list_qNCXKN"
+        "link_list_qNCXKN",
+        "newsletter_CUzfia"
       ],
       "settings": {
         "color_scheme": "scheme-4",
-        "newsletter_enable": true,
-        "newsletter_heading": "Newsletter",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 0,
-        "padding_top": 100,
-        "padding_bottom": 52
+        "show_policy": false
       }
     }
   },
