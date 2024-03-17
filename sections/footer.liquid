@@ -43,28 +43,20 @@
         {%- if section.blocks.size > 0 -%}
           <div class="footer__blocks-wrapper {{ isAnimationOn }}" {{ isCascadeOn }}>
             {%- for block in section.blocks -%}
-              {% liquid
-                if block.type == 'link_list'
-                  assign linkList = 'footer-block__link_list footer-block--menu'
-                endif
-                if block.type == 'text'
-                  assign text = 'footer-block__text'
-                endif
-                if block.type == 'brand_information'
-                  assign brandInformation = 'footer-block__brand-information'
-                endif
-                if block.type == 'image'
-                  assign image = 'footer-block__image'
-                endif
-              %}
               <div
                 class="
                   footer-block
                   {% if block.type == 'link_list' %}
-                    footer-block__link_list footer-block--menu
+                    footer-block__link-list footer-block--menu
                   {% endif %}
                   {% if block.type == 'text' %}
                     footer-block__text
+                  {% endif %}
+                  {% if block.type == 'brand_information' %}
+                    footer-block_brand-information
+                  {% endif %}
+                  {% if block.type == 'image' %}
+                    footer-block_image
                   {% endif %}
                   {{ brandInformation}}
                   {{ image }}
