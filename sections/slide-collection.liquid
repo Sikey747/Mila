@@ -1,3 +1,5 @@
+{{ 'section-slider-collection.css' | asset_url | stylesheet_tag }}
+
 {% liquid
   if section.settings.auto_rotate
     assign autoplay = true
@@ -19,11 +21,7 @@
             <div class="swiper-slide">
               <div class="section-slider-collection__ibg ibg">
                 {% if slide.settings.slide_collection.featured_image.src %}
-                  {{
-                    slide.settings.slide_collection.featured_image.src
-                    | image_url: width: '5000px'
-                    | image_tag: loading: 'lazy'
-                  }}
+                  {{ slide.settings.slide_collection.featured_image.src | image_url: width: '5000px' | image_tag }}
                 {% else %}
                   {{ 'collection-apparel-4' | placeholder_svg_tag }}
                 {% endif %}
@@ -31,17 +29,17 @@
                 <div class="section-slider-collection__info page-width-desktop">
                   {% if slide.settings.slide_collection.tags.size > 0 %}
                     {% for tags in slide.settings.slide_collection.tags %}
-                      <span class="section-slider-collection__tags text-13">{{ tags }}</span>
+                      <span class="section-slider-collection__tags text-sm">{{ tags }}</span>
                     {% endfor %}
                   {% else %}
-                    <span class="section-slider-collection__tags text-13">Tag</span>
+                    <span class="section-slider-collection__tags text-sm">Tag</span>
                   {% endif %}
 
                   <h2 class="section-slider-collection__info-title">
                     {{ slide.settings.slide_collection.title | default: 'Tutle' }}
                   </h2>
 
-                  <p class="section-slider-collection__info-description text-22">
+                  <p class="section-slider-collection__info-description text-ml">
                     {{ slide.settings.slide_collection.description | default: 'you text ' }}
                   </p>
 
@@ -63,56 +61,20 @@
   </div>
 </div>
 
-<style>
-  .section-slider-collection {
-    color: rgb(var(--color-foreground));
-  }
-
-  .section-slider-collection__ibg {
-    min-height: calc(100dvh - var(--announcement-bar-high));
-    width: 100%;
-    display: flex;
-  }
-  .section-slider-collection.swiper-pagination {
-    z-index: 5;
-  }
-  .section-slider-collection__info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1.875rem;
-    max-width: 60rem;
-    position: relative;
-    z-index: 5;
-
-    text-align: center;
-  }
-  .section-slider-collection__tags {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .section-slider-collection__info-title {
-    font-family: var(--font-heading-family);
-    font-weight: 500;
-    font-size: 3.75rem;
-    letter-spacing: 0.06em;
-  }
-</style>
-
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const autoplay = document.querySelector('[data-autoplay="true"]');
     const speed = +document.querySelector('[data-speed]').getAttribute('data-speed');
+    let configAutoplay;
 
     if (autoplay) {
-      const configAutoplay = {
+      configAutoplay = {
         autoplay: {
           delay: speed,
         },
       };
     }
-
+    console.log(configAutoplay);
     const sectionSliderCollection = new Swiper('.section-slider-collection .swiper', {
       loop: true,
       slidesPerView: 1,

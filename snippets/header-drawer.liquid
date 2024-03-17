@@ -8,7 +8,7 @@
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
-      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      class="header__icon header__icon--menu header__icon--summary focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span>
@@ -39,7 +39,7 @@
                         tabindex="-1"
                       >
                         <div class="menu-drawer__inner-submenu">
-                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                          <button class="menu-drawer__close-button link--text focus-inset" aria-expanded="true">
                             <span class="menu-drawer__close-button-icon">
                               {% render 'icon-caret' %}
                             </span>

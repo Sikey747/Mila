@@ -40,10 +40,10 @@
               class="announcement-bar__link link link--text focus-inset animate-arrow"
             >
           {%- endif -%}
-          <p class="announcement-bar__message">
+          <p class="link">
             <span>{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
-              {% render 'icon-arrow' %}
+              {% comment %} {% render 'icon-arrow' %} {% endcomment %}
             {%- endif -%}
           </p>
           {%- if section.blocks.first.settings.link != blank -%}
