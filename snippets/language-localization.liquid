@@ -8,12 +8,16 @@
 <div class="disclosure">
   <button
     type="button"
-    class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+    class="disclosure__button localization-form__select localization-selector link--text text-sm "
     aria-expanded="false"
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
     <span>{{ localization.language.endonym_name | capitalize }}</span>
+    <span
+      >({{ localization.country.currency.iso_code | upcase }}
+      {{ localization.country.currency.symbol | upcase }})</span
+    >
     {% render 'icon-caret' %}
   </button>
   <div class="disclosure__list-wrapper" hidden>
@@ -40,10 +44,17 @@
             <span>
               {{ language.endonym_name | capitalize }}
             </span>
+            {% for locale in localization.available_countries %}
+              <span
+                >({{ locale.currency.iso_code | upcase }}
+                {{ locale.currency.symbol | upcase }})</span
+              >
+            {% endfor %}
           </a>
         </li>
       {%- endfor -%}
     </ul>
   </div>
+  <small class="text-sm">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}</small>
 </div>
 <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
