@@ -1,0 +1,100 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+%}
+
+{{ 'section-text-on-bacground.css' | asset_url | stylesheet_tag }}
+
+<div class="section-text-on-bacground__color ibg color-{{ section.settings.color_scheme }}">
+  <div class="filter"></div>
+  {% if section.settings.image.src %}
+    {{ section.settings.image.src | image_url: width: '5000px' | image_tag }}
+  {% else %}
+    {{ 'lifestyle-1' | placeholder_svg_tag }}
+  {% endif %}
+
+  <div class="section-text-on-bacground__page-width page-width">
+    <ul class="section-text-on-bacground__items">
+      {% for block in section.blocks %}
+        <li class="section-text-on-bacground__item">
+          {% case block.type %}
+            {% when 'block-text' %}
+              <p class="text-sm {{isAnimationOn}}">{{ block.settings.text }}</p>
+            {% when 'block-title' %}
+              <h2 class="text-xl f2 font-medium {{isAnimationOn}}">{{ block.settings.title }}</h2>
+          {% endcase %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text on bacground",
+  "tag": "section",
+  "class": "section-text-on-bacground",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image bacground"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block-text",
+      "name": "Text body",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text body",
+          "default": "<p>Text body</p>"
+        }
+      ]
+    },
+    {
+      "type": "block-title",
+      "name": "Text title",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title text",
+          "default": "<p>Text title</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text on bacground",
+      "blocks": [
+        {
+          "type": "block-text"
+        },
+        {
+          "type": "block-title"
+        },
+        {
+          "type": "block-text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

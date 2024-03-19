@@ -1,0 +1,17 @@
+.section-text-on-bacground__color {
+  padding-top: clamp(6.25rem, 2.524vw + 5.666rem, 7.875rem);
+  padding-bottom: clamp(6.25rem, 2.524vw + 5.666rem, 7.875rem);
+}
+.section-text-on-bacground__page-width {
+  max-width: calc(var(--container-width) * 0.735);
+  position: relative;
+  z-index: 5;
+}
+.section-text-on-bacground__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.875rem;
+}
