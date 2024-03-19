@@ -1,0 +1,11 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOnStyle = 'style="--animation-order: {{ forloop.index }}"'
+  endif
+%}

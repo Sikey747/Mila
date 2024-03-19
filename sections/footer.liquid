@@ -5,17 +5,7 @@
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
-{% liquid
-  if settings.animations_reveal_on_scroll
-    assign isAnimationOn = 'scroll-trigger animate--slide-in'
-  endif
-  if settings.animations_reveal_on_scroll
-    assign isCascadeOn = 'data-cascade'
-  endif
-  if settings.animations_reveal_on_scroll
-    assign isCascadeOnStyle = 'style="--animation-order: {{ forloop.index }}"'
-  endif
-%}
+{% render 'anumation-checked' %}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- liquid
@@ -338,30 +328,6 @@
     </div>
   </div>
 </footer>
-
-<style>
-  footer {
-    padding-top: clamp(3.125rem, 4.854vw + 2.002rem, 6.25rem);
-    padding-bottom: 3.125rem;
-  }
-  .footer-block__details-ibg {
-    position: relative;
-    width: 10.625rem;
-    min-height: 3.375rem;
-    margin-top: 1.25rem;
-  }
-  .footer-block--newsletter {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  .list-social {
-    justify-content: start;
-  }
-  .list-social__item path {
-    fill: var(--gray-500);
-  }
-</style>
 
 {% schema %}
 {

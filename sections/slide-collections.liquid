@@ -1,26 +1,115 @@
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+{% liquid
+  if section.settings.auto_rotate
+    assign autoplay = true
+  endif
+  assign speed = section.settings.change_slides_speed | append: '000'
+%}
+
+<div
+  data-autoplay="{{ autoplay }}"
+  data-speed="{{ speed }}"
+  class="section-slider-collections__container page-width color-{{ section.settings.color_scheme }}"
+>
+  <div class="section-slider-collections__headers">
+    <h2 class="section-slider-collections__title text-xs f2 tracking-m font-medium">
+      {{ section.settings.heading | default: 'Our Collections' }}
+    </h2>
+    <a class="section-slider-collections__headers-link link" href="{{ routes.collections_url }}">
+      {{- 'View all' | default: 'View all' -}}
+    </a>
   </div>
-  <div class="swiper-scrollbar"></div>
+
+  <div class="swiper">
+    <div class="swiper-wrapper  ">
+      {% for slide in section.blocks %}
+        {% if slide.type == 'slide' %}
+          <div
+            class="swiper-slide"
+          >
+            {% render 'card-slide-collections', item: slide.settings.slide_collection. index: forloop.index %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
 </div>
 
-{% comment %}
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const sectionSliderCollection = new Swiper('.section-slider-collection .swiper', {
-        loop: true,
-        slidesPerView: 1,
-        pagination: {
-          el: '.section-slider-collection .swiper-pagination',
-          clickable: 'true',
+<script>
+  const startSwiper = () => {
+    const IsAutoplay = document.querySelector('.section-slider-collections__container[data-autoplay="true"]');
+    const speed = +document
+      .querySelector('.section-slider-collections__container[data-speed]')
+      .getAttribute('data-speed');
+    let autoConfig;
+
+    if (IsAutoplay) {
+      autoConfig = {
+        autoplay: {
+          delay: speed,
         },
-      });
-    });
-  </script>
-{% endcomment %}
+      };
+    }
+
+    const config = {
+      ...autoConfig,
+      spaceBetween: 20,
+      scrollbar: {
+        el: '.section-slider-collections .swiper-scrollbar',
+        draggable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.2,
+        },
+        700: {
+          slidesPerView: 2.25,
+        },
+        980: {
+          slidesPerView: 2.5,
+        },
+        1200: {
+          slidesPerView: 3,
+        },
+      },
+    };
+
+    const sectionSliderCollections = new Swiper('.section-slider-collections .swiper', config);
+  };
+
+  window.addEventListener('DOMContentLoaded', () => startSwiper());
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:load', () => startSwiper());
+    document.addEventListener('shopify:section:reorder', () => startSwiper());
+  }
+</script>
+
+<style>
+  .section-slider-collections__container {
+    padding-top: clamp(3.125rem, 3.883vw + 2.227rem, 5.625rem);
+    padding-bottom: clamp(3.125rem, 3.883vw + 2.227rem, 5.625rem);
+  }
+  .section-slider-collections__headers {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-slider-collections .swiper {
+    margin-top: 2.125rem;
+    margin-bottom: 2.125rem;
+    overflow: visible;
+  }
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    bottom: var(--swiper-scrollbar-bottom, -34px);
+    cursor: pointer;
+    left: var(--swiper-scrollbar-sides-offset, 50%);
+    width: calc(65.46% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+    translate: -50% 0;
+  }
+</style>
 
 {% schema %}
 {
@@ -32,10 +121,16 @@
   },
   "settings": [
     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading section",
+      "default": "Our Collections"
+    },
+    {
       "type": "checkbox",
       "id": "auto_rotate",
       "label": "t:sections.slideshow.settings.auto_rotate.label",
-      "default": false
+      "default": true
     },
     {
       "type": "range",
@@ -45,49 +140,24 @@
       "step": 2,
       "unit": "s",
       "label": "t:sections.slideshow.settings.change_slides_speed.label",
-      "default": 6
+      "default": 10
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-3"
+      "default": "scheme-1"
     }
   ],
   "blocks": [
     {
       "type": "slide",
-      "name": "t:sections.slideshow.blocks.slide.name",
-      "limit": 6,
+      "name": "Slide Colection",
       "settings": [
         {
           "type": "collection",
           "id": "slide_collection",
           "label": "Collection slide"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "Image slide",
-          "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "default": "Button label",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_text_box",
-          "label": "t:sections.slideshow.blocks.slide.settings.show_text_box.label",
-          "default": true
         }
       ]
     }

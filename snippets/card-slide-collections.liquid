@@ -1,0 +1,45 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+%}
+
+<a
+  href="{{ item.url |  default: "#" }}"
+  class="card-slide-collection ibg {{ isAnimationOn }}"
+  {{ isCascadeOn }}
+  style="--animation-order: {{ index }}"
+>
+  <div class="filter"></div>
+  {% if item.image.src %}
+    {{ item.image.src | image_url: width: '500px' | image_tag }}
+  {% else %}
+    {{ 'product-1' | placeholder_svg_tag }}
+  {% endif %}
+  <h3 class="card-slide-collection__title font-medium text-xs f2 tracking-m">
+    {{ item.title | camelize | default: 'Text' }}
+  </h3>
+</a>
+
+<style>
+  .card-slide-collection {
+    flex: 1 1 470px;
+    min-height: clamp(21.5rem, 16.311vw + 17.728rem, 32rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1;
+  }
+  .card-slide-collection__title {
+    position: relative;
+    z-index: 5;
+    color: rgb(var(--color-background));
+    transition: all 0.3s ease-in-out;
+  }
+  .card-slide-collection:hover .card-slide-collection__title {
+    scale: 1.05;
+  }
+</style>

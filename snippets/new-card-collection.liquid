@@ -1,0 +1,70 @@
+{{ 'new-card-collection.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+%}
+
+{% liquid
+  if index == 2
+    assign secondItem = 'new-card-collection__second'
+  endif
+%}
+
+{% if index == 2 %}
+  <style>
+    .new-card-collection.new-card-collection__second{
+      flex: 1 0 {{ width }}%;
+    }
+  </style>
+{% endif %}
+
+{% if isDesktop == true %}
+  <style>
+    .new-card-collection__button {
+      display: none;
+    }
+    @media (width <= 768px) {
+      .new-card-collection__button {
+        display: block;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if isDesktopShow == false %}
+  <a
+    href="{{ item.url }}"
+    class="new-card-collection ibg {{secondItem}} {{isAnimationOn}}"
+    {{ isCascadeOn }}
+    style="--animation-order: {{ index }}"
+  >
+{% else %}
+  <div class="new-card-collection ibg {{ secondItem }}">
+{% endif %}
+
+<div class="filter"></div>
+
+{% if item.image.src %}
+  {{ item.image.src | image_url: width: '500px' | image_tag }}
+{% else %}
+  {{ 'collection-4' | placeholder_svg_tag }}
+{% endif %}
+
+<div class="new-card-collection__info">
+  <p class="text-sm tracking-x">{{ item.tag.first | default: 'Sibtitle text' | upcase }}</p>
+  <h3 class="f2 font-medium text-xs tracking-m">{{ item.title | default: 'Title text' | capitalize }}</h3>
+  {% if isDesktopShow != false %}
+    <a href="{{ item.url }}" class="new-card-collection__button button">{{ buttonText }}</a>
+  {% endif %}
+</div>
+
+{% if isDesktopShow == false %}
+  </a>
+{% else %}
+  </div>
+{% endif %}

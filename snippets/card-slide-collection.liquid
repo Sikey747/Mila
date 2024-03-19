@@ -1,0 +1,33 @@
+<div class="section-slider-collection__ibg ibg">
+  {% if slide.settings.slide_collection.featured_image.src %}
+    <div class="filter"></div>
+    {{ slide.settings.slide_collection.featured_image.src | image_url: width: '5000px' | image_tag }}
+  {% else %}
+    {{ 'collection-apparel-4' | placeholder_svg_tag }}
+  {% endif %}
+
+  <div class="section-slider-collection__info page-width">
+    {% if slide.settings.slide_collection.tags.size > 0 %}
+      {% for tags in slide.settings.slide_collection.tags %}
+        <span class="section-slider-collection__tags text-sm">{{ tags }}</span>
+      {% endfor %}
+    {% else %}
+      <span class="section-slider-collection__tags text-sm">Tag</span>
+    {% endif %}
+
+    <h2 class="section-slider-collection__info-title">
+      {{ slide.settings.slide_collection.title | default: 'Tutle' }}
+    </h2>
+
+    <p class="section-slider-collection__info-description text-ml">
+      {{ slide.settings.slide_collection.description | default: 'you text ' }}
+    </p>
+
+    <a
+      class="section-slider-collection__link button button--primary"
+      href="{{ slide.settings.slide_collection.url }}"
+    >
+      {{- slide.settings.button_label -}}
+    </a>
+  </div>
+</div>

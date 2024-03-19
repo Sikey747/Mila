@@ -20,6 +20,7 @@
         {% if card.type == 'mega_menu_cards' %}
           <div class="mege-menu__cad ibg">
             {{ card.settings.mega_menu_card.image.src | image_url: width: '500px' | image_tag: loading: 'lazy' }}
+            <div class="filter"></div>
             <div class="mege-menu__cad_info">
               <p>{{ card.settings.mega_menu_card.tags.first }}</p>
               <h4>{{ card.settings.mega_menu_card.title }}</h4>

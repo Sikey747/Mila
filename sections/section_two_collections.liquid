@@ -1,0 +1,156 @@
+<div class="section_two_collections__color color-{{ section.settings.color_scheme }}">
+  <div class="section_two_collections__desktop page-width">
+    <div class="section_two_collections__items">
+      {% for block in section.blocks %}
+        {% if block.type == 'collection_block' %}
+          {% render 'new-card-collection',
+            item: block.settings.collection_item,
+            index: forloop.index,
+            isDesktopShow: section.settings.show_button_in_desktope,
+            buttonText: section.settings.link_text,
+            width: section.settings.second_collection_width
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section_two_collections__mobile">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'collection_block' %}
+            <div class="swiper-slide">
+              {% render 'new-card-collection',
+                item: block.settings.collection_item,
+                index: forloop.index,
+                isDesktopShow: true,
+                buttonText: section.settings.link_text,
+                width: section.settings.second_collection_width
+              %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="section_two_collections swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section_two_collections__desktop {
+    display: none;
+    padding-top: clamp(0rem, 7.767vw - 1.796rem, 5rem);
+    padding-bottom: clamp(0rem, 7.767vw - 1.796rem, 5rem);
+  }
+  .section_two_collections__mobile {
+    display: block;
+    /* height: 50vw; */
+    width: 100%;
+  }
+  .section_two_collections__items {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .section_two_collections .swiper-pagination {
+    bottom: var(--swiper-pagination-bottom, 5%);
+  }
+  @media (min-width: 768px) {
+    .section_two_collections__mobile {
+      display: none;
+    }
+    .section_two_collections__desktop {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const startSwiper = () => {
+    const config = {
+      loop: true,
+      slidesPerView: 1,
+      pagination: {
+        el: '.section_two_collections .swiper-pagination',
+        clickable: 'true',
+      },
+    };
+
+    const sectionTwoCollections = new Swiper('.section_two_collections .swiper', config);
+  };
+
+  window.addEventListener('DOMContentLoaded', () => startSwiper());
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:load', () => startSwiper());
+    document.addEventListener('shopify:section:reorder', () => startSwiper());
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Two collections",
+  "tag": "section",
+  "class": "section_two_collections",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-3"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Shop now"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_in_desktope",
+      "label": "Show button in desktope",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "second_collection_width",
+      "label": "second collection width",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 54
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_item",
+          "label": "Collection item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two collections",
+      "blocks": [
+        {
+          "type": "collection_block"
+        },
+        {
+          "type": "collection_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

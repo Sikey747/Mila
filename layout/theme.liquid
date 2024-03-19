@@ -245,6 +245,7 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+        overflow-x: hidden;
       }
     {% endstyle %}
 
@@ -300,7 +301,7 @@
     <script defer src="{{ "swiper.js" |  asset_url}}"></script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
