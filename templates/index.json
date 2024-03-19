@@ -119,11 +119,21 @@
         "show_button_in_desktope": false,
         "second_collection_width": 54
       }
+    },
+    "section_collection_review_F4aL4t": {
+      "type": "section_collection_review",
+      "settings": {
+        "color_scheme": "",
+        "collection": "the-elite-story",
+        "button-text": "Shop the collection",
+        "revers_desktop": false
+      }
     }
   },
   "order": [
     "slide_collection_fgVzTJ",
     "slide_collections_NX3HiE",
-    "section_two_collections_imrtWh"
+    "section_two_collections_imrtWh",
+    "section_collection_review_F4aL4t"
   ]
 }
