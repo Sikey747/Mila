@@ -51,40 +51,43 @@
         "slide_LkhEcR": {
           "type": "slide",
           "settings": {
-            "slide_collection": "",
-            "heading": "Image slide",
-            "button_label": "Button label",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "black-friday"
           }
         },
         "slide_ELJVRd": {
           "type": "slide",
           "settings": {
-            "slide_collection": "",
-            "heading": "Image slide",
-            "button_label": "Button label",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "maximum-impact"
           }
         },
         "slide_3nDGRG": {
           "type": "slide",
           "settings": {
-            "slide_collection": "",
-            "heading": "Image slide",
-            "button_label": "Button label",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "coll"
+          }
+        },
+        "slide_7D6chF": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "up-selll"
+          }
+        },
+        "slide_kQEh6L": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "frontpage"
           }
         }
       },
       "block_order": [
         "slide_LkhEcR",
         "slide_ELJVRd",
-        "slide_3nDGRG"
+        "slide_3nDGRG",
+        "slide_7D6chF",
+        "slide_kQEh6L"
       ],
       "settings": {
+        "heading": "Our Collections",
         "auto_rotate": false,
         "change_slides_speed": 6,
         "color_scheme": ""
