@@ -1,3 +1,5 @@
+{{ 'section-two-collections.css' | asset_url | stylesheet_tag }}
+
 <div class="section_two_collections__color color-{{ section.settings.color_scheme }}">
   <div class="section_two_collections__desktop page-width">
     <div class="section_two_collections__items">
@@ -38,55 +40,7 @@
   </div>
 </div>
 
-<style>
-  .section_two_collections__desktop {
-    display: none;
-    padding-top: clamp(0rem, 7.767vw - 1.796rem, 5rem);
-    padding-bottom: clamp(0rem, 7.767vw - 1.796rem, 5rem);
-  }
-  .section_two_collections__mobile {
-    display: block;
-    /* height: 50vw; */
-    width: 100%;
-  }
-  .section_two_collections__items {
-    display: flex;
-    gap: 1.25rem;
-  }
-  .section_two_collections .swiper-pagination {
-    bottom: var(--swiper-pagination-bottom, 5%);
-  }
-  @media (min-width: 768px) {
-    .section_two_collections__mobile {
-      display: none;
-    }
-    .section_two_collections__desktop {
-      display: block;
-    }
-  }
-</style>
-
-<script>
-  const startSwiper = () => {
-    const config = {
-      loop: true,
-      slidesPerView: 1,
-      pagination: {
-        el: '.section_two_collections .swiper-pagination',
-        clickable: 'true',
-      },
-    };
-
-    const sectionTwoCollections = new Swiper('.section_two_collections .swiper', config);
-  };
-
-  window.addEventListener('DOMContentLoaded', () => startSwiper());
-
-  if (Shopify.designMode) {
-    document.addEventListener('shopify:section:load', () => startSwiper());
-    document.addEventListener('shopify:section:reorder', () => startSwiper());
-  }
-</script>
+<script defer {{ 'section-two-collections.js' | asset_url }}></script>
 
 {% schema %}
 {

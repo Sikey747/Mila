@@ -1,0 +1,134 @@
+{{ 'section-image-and-text.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+%}
+
+<div class="image-and-text__color page-width color-{{ section.settings.color_scheme }}">
+  <ul class="image-and-text__items">
+    {% for block in section.blocks %}
+      <li
+        class="image-and-text__item {{isAnimationOn}}"
+        {{ isCascadeOn }}
+        style="--animation-order: {{ forloop.index }}"
+      >
+        {% case block.type %}
+          {% when 'block-image' %}
+            {% liquid
+              if block.settings.isNativImageSize
+                assign isNativ = 'ibg_in'
+              else
+                assign isNativ = 'ibgr'
+              endif
+            %}
+            <div class="image-and-text__block-image {{isNativ}}">
+              {% if block.settings.image.src %}
+                {{
+                  block.settings.image.src
+                  | image_url: width: block.settings.image.width, height: block.settings.image.height
+                  | image_tag: loading: 'lazy'
+                }}
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag }}
+              {% endif %}
+            </div>
+          {% when 'block-sub-title' %}
+            <div class="image-and-text__block-sub-title">
+              <p class="text-sm tracking-x">{{ block.settings.subtitle | upcase }}</p>
+            </div>
+          {% when 'block-desription' %}
+            <div class="image-and-text__block-desription">
+              <h2 class="f2 font-medium text-xm">{{ block.settings.description }}</h2>
+            </div>
+        {% endcase %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Image and text",
+  "tag": "section",
+  "class": "section-image-and-text",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block-image",
+      "name": "Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "isNativImageSize",
+          "label": "Nativ image size",
+          "default": false,
+          "info": "Nativ or default image width and hight sizes (max 900px)"
+        }
+      ]
+    },
+    {
+      "type": "block-sub-title",
+      "name": "Subtitle",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "<p>subtitle exsemple</p>"
+        }
+      ]
+    },
+    {
+      "type": "block-desription",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Description exsemple</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image and text",
+      "blocks": [
+        {
+          "type": "block-image"
+        },
+        {
+          "type": "block-sub-title"
+        },
+        {
+          "type": "block-desription"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+.section_two_collections__desktop {
+  display: none;
+  padding-top: clamp(0rem, 7.767vw - 1.796rem, 5rem);
+  padding-bottom: clamp(0rem, 7.767vw - 1.796rem, 5rem);
+}
+.section_two_collections__mobile {
+  display: block;
+  /* height: 50vw; */
+  width: 100%;
+}
+.section_two_collections__items {
+  display: flex;
+  gap: 1.25rem;
+}
+.section_two_collections .swiper-pagination {
+  bottom: var(--swiper-pagination-bottom, 5%);
+}
+@media (min-width: 768px) {
+  .section_two_collections__mobile {
+    display: none;
+  }
+  .section_two_collections__desktop {
+    display: block;
+  }
+}
