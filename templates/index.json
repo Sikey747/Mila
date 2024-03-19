@@ -160,6 +160,38 @@
       "settings": {
         "color_scheme": ""
       }
+    },
+    "text_on_bacground_wF4KHV": {
+      "type": "text_on_bacground",
+      "blocks": {
+        "block_text_JKqrDD": {
+          "type": "block-text",
+          "settings": {
+            "text": "<p>OUR VERSION<\/p>"
+          }
+        },
+        "block_title_ywLr7j": {
+          "type": "block-title",
+          "settings": {
+            "title": "<p>To empower women globally to celebrate summer with confidence.<\/p>"
+          }
+        },
+        "block_text_8mtYdR": {
+          "type": "block-text",
+          "settings": {
+            "text": "<p>Luxurious high quality pieces that are designed to last.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_text_JKqrDD",
+        "block_title_ywLr7j",
+        "block_text_8mtYdR"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image": "shopify:\/\/shop_images\/image.jpg"
+      }
     }
   },
   "order": [
@@ -167,6 +199,7 @@
     "slide_collections_NX3HiE",
     "section_two_collections_imrtWh",
     "section_collection_review_F4aL4t",
-    "section_image_and_text_fAXz3y"
+    "section_image_and_text_fAXz3y",
+    "text_on_bacground_wF4KHV"
   ]
 }
