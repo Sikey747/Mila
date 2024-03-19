@@ -192,6 +192,15 @@
         "color_scheme": "scheme-3",
         "image": "shopify:\/\/shop_images\/image.jpg"
       }
+    },
+    "section_collection_review_UYcbic": {
+      "type": "section_collection_review",
+      "settings": {
+        "color_scheme": "",
+        "collection": "black-friday",
+        "button-text": "Shop the collection",
+        "revers_desktop": true
+      }
     }
   },
   "order": [
@@ -200,6 +209,7 @@
     "section_two_collections_imrtWh",
     "section_collection_review_F4aL4t",
     "section_image_and_text_fAXz3y",
-    "text_on_bacground_wF4KHV"
+    "text_on_bacground_wF4KHV",
+    "section_collection_review_UYcbic"
   ]
 }
