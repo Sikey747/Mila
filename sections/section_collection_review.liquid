@@ -1,0 +1,99 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+  if section.settings.revers_desktop
+    assign revers = 'section-collection-review_revers'
+  endif
+%}
+
+{{ 'section-collectio-review.css' | asset_url | stylesheet_tag }}
+
+<div class="section-collection-review__page-width page-width {{ revers }} color-{{ section.settings.color_scheme }}">
+  <div class="section-collection-review__photo-block">
+    <div class="section-collection-review__img ibg {{isAnimationOn}}">
+      {% if section.settings.collection.image.src %}
+        {{ section.settings.collection.image.src | image_url: width: '5000px' | image_tag }}
+      {% else %}
+        {{ 'collection-6' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
+    <p class="font-medium">
+      {{ section.settings.collection.title | default: 'title text' }}
+      {% for tag in section.settings.collection.all_tags %}
+        <span>{{ tag | default: 'tag text' }}</span>
+      {% endfor %}
+    </p>
+  </div>
+  <div class="section-collection-review__info-block">
+    <div class="section-collection-review__info {{isAnimationOn}}">
+      <div class="section-collection-review__star">
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+        {% render 'icon-star' %}
+      </div>
+      <h2 class="f2 font-medium text-xs">
+        {{ section.settings.collection.title | default: 'Title text' | capitalize }}
+      </h2>
+      <p>{{ section.settings.collection.description | default: 'Description text' }}</p>
+      <a class="button button--secondary" href="{{section.settings.collection.url}}">
+        {{- section.settings['button-text'] | capitalize -}}
+      </a>
+    </div>
+    {% if section.settings.collection.metafields.image.image.value != blank %}
+      <div class="section-collection-review__media ibg {{isAnimationOn}}">
+        {% if section.settings.collection.metafields.image.image.value %}
+          {{ section.settings.collection.products.first.images.last.src | image_url: width: '5000px' | image_tag }}
+        {% else %}
+          {{ 'product-3' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection review",
+  "tag": "section",
+  "class": "section-collection-review",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button text",
+      "default": "Shop the collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "revers_desktop",
+      "label": "Reverse desktop",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection review"
+    }
+  ]
+}
+{% endschema %}

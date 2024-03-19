@@ -1132,6 +1132,7 @@ h3 .icon-arrow,
 
 .ibg {
   width: 100%;
+  position: relative;
 }
 
 .ibg img,
@@ -1140,6 +1141,13 @@ h3 .icon-arrow,
   content: "";
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ibgr img,
+.ibgr svg {
   width: 100%;
   height: 100%;
   object-fit: cover;

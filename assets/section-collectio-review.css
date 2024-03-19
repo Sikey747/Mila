@@ -1,0 +1,81 @@
+.section-collection-review_revers {
+  flex-direction: row-reverse;
+}
+.section-collection-review_revers .section-collection-review__media {
+  margin-left: auto;
+  margin-right: clamp(1rem, 5.538vw - 2.658rem, 2.188rem);
+  min-height: 23.8125rem;
+  width: 74.55%;
+}
+.section-collection-review__page-width {
+  max-width: calc(var(--container-width) * 0.89);
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
+  display: flex;
+}
+.section-collection-review__photo-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  gap: 0.9375rem;
+  padding-left: clamp(1rem, 5.538vw - 2.658rem, 2.188rem);
+  padding-right: clamp(1rem, 5.538vw - 2.658rem, 2.188rem);
+  text-align: center;
+}
+.section-collection-review__img {
+  min-height: clamp(26.875rem, 39.563vw, 37.5rem);
+}
+.section-collection-review__info-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  gap: 1.875rem;
+}
+.section-collection-review__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.875rem;
+  padding-left: clamp(0rem, 2.612vw, 2.188rem);
+  padding-right: clamp(0rem, 2.612vw, 2.188rem);
+  padding-top: clamp(0rem, 7.464vw, 6.25rem);
+  padding-bottom: clamp(0rem, 7.464vw, 6.25rem);
+}
+.section-collection-review__info a {
+  margin-top: 0.9375rem;
+}
+.section-collection-review__star {
+  display: flex;
+  gap: 0.125rem;
+}
+.section-collection-review__media {
+  margin-right: auto;
+  margin-left: clamp(1rem, 5.538vw - 2.658rem, 2.188rem);
+  min-height: 23.8125rem;
+  width: 74.55%;
+}
+@media (max-width: 768px) {
+  .section-collection-review__page-width {
+    flex-direction: column-reverse;
+    gap: 1.875rem;
+    text-align: center;
+  }
+  .section-collection-review__photo-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-collection-review__info {
+    justify-content: center;
+    align-items: center;
+  }
+  .section-collection-review__media {
+    width: 100%;
+    margin-left: 0;
+  }
+  .section-collection-review_revers .section-collection-review__media {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
