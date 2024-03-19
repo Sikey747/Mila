@@ -128,12 +128,45 @@
         "button-text": "Shop the collection",
         "revers_desktop": false
       }
+    },
+    "section_image_and_text_fAXz3y": {
+      "type": "section-Image-and-text",
+      "blocks": {
+        "block_image_9CJYJ8": {
+          "type": "block-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_2.png",
+            "isNativImageSize": false
+          }
+        },
+        "block_sub_title_WpYLMF": {
+          "type": "block-sub-title",
+          "settings": {
+            "subtitle": "<p>subtitle exsemple<\/p>"
+          }
+        },
+        "block_desription_xpxwfg": {
+          "type": "block-desription",
+          "settings": {
+            "description": "<p>Description exsemple<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_image_9CJYJ8",
+        "block_sub_title_WpYLMF",
+        "block_desription_xpxwfg"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "slide_collection_fgVzTJ",
     "slide_collections_NX3HiE",
     "section_two_collections_imrtWh",
-    "section_collection_review_F4aL4t"
+    "section_collection_review_F4aL4t",
+    "section_image_and_text_fAXz3y"
   ]
 }
