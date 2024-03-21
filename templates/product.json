@@ -3,146 +3,87 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title": {
+        "title_pT3FhP": {
           "type": "title",
           "settings": {
           }
         },
-        "rating_DK98g4": {
-          "type": "rating",
-          "settings": {
-          }
-        },
-        "price": {
+        "price_BLW8HX": {
           "type": "price",
           "settings": {
           }
         },
-        "variant_picker": {
+        "inventory_fHmpnC": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "variant_picker_AmW9Uq": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
+        "quantity_selector_gL9JCj": {
           "type": "quantity_selector",
           "settings": {
           }
         },
-        "buy_buttons": {
+        "buy_buttons_jgzHim": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
         },
-        "description": {
+        "description_GPjzBq": {
           "type": "description",
           "settings": {
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "sku_YbDAYE": {
-          "type": "sku",
-          "settings": {
-            "text_style": "uppercase"
-          }
-        },
-        "complementary_HMQUkR": {
-          "type": "complementary",
-          "settings": {
-            "block_heading": "Pairs well with",
-            "make_collapsible_row": false,
-            "icon": "fire",
-            "product_list_limit": 10,
-            "products_per_page": 3,
-            "pagination_style": "counter",
-            "image_ratio": "portrait",
-            "enable_quick_add": true
-          }
-        },
-        "popup_Qfqz3W": {
-          "type": "popup",
-          "settings": {
-            "text": "Pop-up link text",
-            "page": "ice-title-page-my-tittle"
-          }
-        },
-        "text_FKW8GP": {
-          "type": "text",
-          "settings": {
-            "text": "Text block",
-            "text_style": "body"
-          }
-        },
-        "inventory_UCpiQM": {
-          "type": "inventory",
-          "settings": {
-            "text_style": "body",
-            "inventory_threshold": 43,
-            "show_inventory_quantity": true
-          }
-        },
-        "collapsible_tab_8KyE7R": {
+        "collapsible_tab_PM4Riy": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "truck",
-            "content": "<p>585858588<\/p>",
-            "page": "about-us"
+            "heading": "Description",
+            "icon": "eye",
+            "content": "",
+            "page": ""
           }
         },
-        "popup_w3em8D": {
-          "type": "popup",
+        "collapsible_tab_Ri74Ue": {
+          "type": "collapsible_tab",
           "settings": {
-            "text": "text",
-            "page": "ice-title-page-my-tittle"
+            "heading": "Size & Fit",
+            "icon": "bottle",
+            "content": "",
+            "page": ""
           }
         },
-        "icon_with_text_aEdQrC": {
-          "type": "icon-with-text",
+        "collapsible_tab_BDRiTJ": {
+          "type": "collapsible_tab",
           "settings": {
-            "layout": "horizontal",
-            "icon_1": "heart",
-            "heading_1": "Heading",
-            "icon_2": "return",
-            "heading_2": "Heading",
-            "icon_3": "truck",
-            "heading_3": "Heading"
+            "heading": "Reviews",
+            "icon": "star",
+            "content": "",
+            "page": ""
           }
         }
       },
       "block_order": [
-        "vendor",
-        "title",
-        "rating_DK98g4",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "share",
-        "sku_YbDAYE",
-        "complementary_HMQUkR",
-        "popup_Qfqz3W",
-        "text_FKW8GP",
-        "inventory_UCpiQM",
-        "collapsible_tab_8KyE7R",
-        "popup_w3em8D",
-        "icon_with_text_aEdQrC"
+        "title_pT3FhP",
+        "price_BLW8HX",
+        "inventory_fHmpnC",
+        "variant_picker_AmW9Uq",
+        "quantity_selector_gL9JCj",
+        "buy_buttons_jgzHim",
+        "description_GPjzBq",
+        "collapsible_tab_PM4Riy",
+        "collapsible_tab_Ri74Ue",
+        "collapsible_tab_BDRiTJ"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -162,7 +103,6 @@
     },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -178,22 +118,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "quick_order_list_PrgcML": {
-      "type": "quick-order-list",
-      "disabled": true,
-      "settings": {
-        "show_image": false,
-        "show_sku": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
-    "related-products",
-    "quick_order_list_PrgcML"
+    "related-products"
   ]
 }
