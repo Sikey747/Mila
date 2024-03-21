@@ -1,6 +1,6 @@
 "use strict";
 
-var startSwiper = function startSwiper() {
+var startSwiperTwoCollections = function startSwiperTwoCollections() {
   var config = {
     loop: true,
     slidesPerView: 1,
@@ -13,14 +13,14 @@ var startSwiper = function startSwiper() {
 };
 
 window.addEventListener("DOMContentLoaded", function () {
-  return startSwiper();
+  return startSwiperTwoCollections();
 });
 
 if (Shopify.designMode) {
   document.addEventListener("shopify:section:load", function () {
-    return startSwiper();
+    return startSwiperTwoCollections();
   });
   document.addEventListener("shopify:section:reorder", function () {
-    return startSwiper();
+    return startSwiperTwoCollections();
   });
 }

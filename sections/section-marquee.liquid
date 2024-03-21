@@ -1,0 +1,123 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if section.settings.isAnimationOn
+    assign animationMarquee = '5000ms'
+  endif
+  if section.settings.rightAnimation
+    assign rightAnimation = 'marquee_right'
+  endif
+%}
+
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="section-marquee__color color-{{ section.settings.color_scheme }} {{isAnimationOn}}"
+>
+  <ul class="section-marquee__items">
+    {% for block in section.blocks %}
+      {% if block.type == 'block-image' %}
+        <li class="section-marquee__item ibg">
+          {% if block.settings.image.image.src != black %}
+            {{ block.settings.image.image.src | image_url: width: '5000px' | image_tag }}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+    <div class="marquee">
+      <div class="track">
+        {% for item in (1..8) %}
+          <h2
+            class="section-marquee__text content text {{rightAnimation}}"
+            style="--marquee-speed: {{animationMarquee}};"
+          >
+            {% if section.settings['text-solid'] %}
+              <span class="section-marquee__text_solid"> {{ section.settings['text-solid'] }}</span>
+            {% endif %}
+            {% if section.settings['text-border'] %}
+              <span class="section-marquee__text_border">{{ section.settings['text-border'] }}</span>
+            {% endif %}
+          </h2>
+        {% endfor %}
+      </div>
+    </div>
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "tag": "section",
+  "class": "section-marquee",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-3"
+    },
+    {
+      "type": "text",
+      "id": "text-solid",
+      "label": "Solid text",
+      "default": "Black"
+    },
+    {
+      "type": "text",
+      "id": "text-border",
+      "label": "Border text",
+      "default": "Friday"
+    },
+    {
+      "type": "checkbox",
+      "id": "isAnimationOn",
+      "label": "Animation text on",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "rightAnimation",
+      "label": "Animation right animation",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block-image",
+      "name": "Image bacground",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "blocks": [
+        {
+          "type": "block-image"
+        },
+        {
+          "type": "block-image"
+        },
+        {
+          "type": "block-image"
+        },
+        {
+          "type": "block-image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

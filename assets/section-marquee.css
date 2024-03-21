@@ -1,0 +1,79 @@
+.section-marquee__items {
+  display: flex;
+  position: relative;
+}
+.section-marquee__item {
+  min-height: clamp(9.375rem, 20.388vw + 4.66rem, 22.5rem);
+  padding-top: clamp(1.625rem, 8.544vw - 0.351rem, 7.125rem);
+  flex: 1 1 25%;
+}
+.section-marquee__text {
+  font-size: clamp(4.313rem, 2.718vw + 3.684rem, 6.063rem);
+  font-weight: 500;
+  width: auto;
+  height: auto;
+  display: flex;
+  gap: 30px;
+}
+.section-marquee__text_border {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-foreground);
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+}
+.section-marquee span:not(:last-child) {
+  margin-inline: 15px;
+}
+/* animations */
+@-webkit-keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes marquee-r {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes marquee-r {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+:root {
+  --marquee-speed: 0ms;
+}
+.marquee {
+  position: absolute;
+  width: 100vw;
+  top: 50%;
+  translate: 0 -50%;
+}
+.track {
+  white-space: nowrap;
+}
+.track .text {
+  -webkit-animation: marquee var(--marquee-speed) linear infinite;
+  animation: marquee var(--marquee-speed) linear infinite;
+  display: inline-flex;
+}
+.track .text.marquee_right {
+  -webkit-animation-name: marquee-r;
+  animation-name: marquee-r;
+}

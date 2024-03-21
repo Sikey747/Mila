@@ -1,4 +1,4 @@
-const startSwiper = () => {
+const startSwiperTwoCollections = () => {
   const config = {
     loop: true,
     slidesPerView: 1,
@@ -11,9 +11,9 @@ const startSwiper = () => {
   const sectionTwoCollections = new Swiper(".section_two_collections .swiper", config);
 };
 
-window.addEventListener("DOMContentLoaded", () => startSwiper());
+window.addEventListener("DOMContentLoaded", () => startSwiperTwoCollections());
 
 if (Shopify.designMode) {
-  document.addEventListener("shopify:section:load", () => startSwiper());
-  document.addEventListener("shopify:section:reorder", () => startSwiper());
+  document.addEventListener("shopify:section:load", () => startSwiperTwoCollections());
+  document.addEventListener("shopify:section:reorder", () => startSwiperTwoCollections());
 }
