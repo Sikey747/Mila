@@ -13,19 +13,19 @@
           "settings": {
           }
         },
+        "variant_picker_AmW9Uq": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
         "inventory_fHmpnC": {
           "type": "inventory",
           "settings": {
             "text_style": "body",
             "inventory_threshold": 10,
             "show_inventory_quantity": true
-          }
-        },
-        "variant_picker_AmW9Uq": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
           }
         },
         "quantity_selector_gL9JCj": {
@@ -89,8 +89,8 @@
       "block_order": [
         "title_pT3FhP",
         "price_BLW8HX",
-        "inventory_fHmpnC",
         "variant_picker_AmW9Uq",
+        "inventory_fHmpnC",
         "quantity_selector_gL9JCj",
         "buy_buttons_jgzHim",
         "description_GPjzBq",
