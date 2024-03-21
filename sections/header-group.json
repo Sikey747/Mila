@@ -2,30 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Black Friday Cyber Monday Sales!",
-            "link": "shopify:\/\/collections"
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "settings": {
-        "color_scheme": "scheme-4",
-        "show_line_separator": false,
-        "show_social": false,
-        "auto_rotate": true,
-        "change_slides_speed": 7,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "header",
       "blocks": {
@@ -69,7 +45,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "header"
   ]
 }
