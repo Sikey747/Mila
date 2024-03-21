@@ -113,7 +113,7 @@
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "cover",
-        "gallery_layout": "thumbnail",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "hover",
         "mobile_thumbnails": "hide",
