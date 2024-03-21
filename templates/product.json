@@ -40,7 +40,7 @@
             "show_gift_card_recipient": true
           }
         },
-        "description_GPjzBq": {
+        "description_XpckQL": {
           "type": "description",
           "settings": {
           }
@@ -84,6 +84,13 @@
             "image_ratio": "portrait",
             "enable_quick_add": false
           }
+        },
+        "popup_8Qh4kN": {
+          "type": "popup",
+          "settings": {
+            "text": "Pop-up link text",
+            "page": "about-us"
+          }
         }
       },
       "block_order": [
@@ -93,21 +100,22 @@
         "inventory_fHmpnC",
         "quantity_selector_gL9JCj",
         "buy_buttons_jgzHim",
-        "description_GPjzBq",
+        "description_XpckQL",
         "collapsible_tab_PM4Riy",
         "collapsible_tab_Ri74Ue",
         "collapsible_tab_BDRiTJ",
-        "complementary_8N3qBp"
+        "complementary_8N3qBp",
+        "popup_8Qh4kN"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "large",
-        "constrain_to_viewport": true,
+        "constrain_to_viewport": false,
         "media_fit": "cover",
-        "gallery_layout": "columns",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
-        "image_zoom": "none",
+        "image_zoom": "hover",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
