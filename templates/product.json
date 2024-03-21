@@ -71,6 +71,19 @@
             "content": "",
             "page": ""
           }
+        },
+        "complementary_8N3qBp": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 2,
+            "pagination_style": "counter",
+            "image_ratio": "portrait",
+            "enable_quick_add": false
+          }
         }
       },
       "block_order": [
@@ -83,7 +96,8 @@
         "description_GPjzBq",
         "collapsible_tab_PM4Riy",
         "collapsible_tab_Ri74Ue",
-        "collapsible_tab_BDRiTJ"
+        "collapsible_tab_BDRiTJ",
+        "complementary_8N3qBp"
       ],
       "settings": {
         "enable_sticky_info": true,
