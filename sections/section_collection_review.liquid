@@ -21,12 +21,14 @@
         {{ 'collection-6' | placeholder_svg_tag }}
       {% endif %}
     </div>
-    <p class="font-medium">
-      {{ section.settings.collection.title | default: 'title text' }}
-      {% for tag in section.settings.collection.all_tags %}
-        <span>{{ tag | default: 'tag text' }}</span>
-      {% endfor %}
-    </p>
+    {% if section.settings.isTagsShow %}
+      <p class="font-medium">
+        {{ section.settings.collection.title | default: 'title text' }}
+        {% for tag in section.settings.collection.all_tags %}
+          <span>{{ tag | default: 'tag text' }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
   </div>
   <div class="section-collection-review__info-block">
     <div class="section-collection-review__info {{isAnimationOn}}">
@@ -103,6 +105,12 @@
       "type": "checkbox",
       "id": "isStarsShow",
       "label": "Show Stars rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "isTagsShow",
+      "label": "Show Tags",
       "default": true
     }
   ],
