@@ -30,20 +30,24 @@
   </div>
   <div class="section-collection-review__info-block">
     <div class="section-collection-review__info {{isAnimationOn}}">
-      <div class="section-collection-review__star">
-        {% render 'icon-star' %}
-        {% render 'icon-star' %}
-        {% render 'icon-star' %}
-        {% render 'icon-star' %}
-        {% render 'icon-star' %}
-      </div>
+      {% if section.settings.isStarsShow %}
+        <div class="section-collection-review__star">
+          {% render 'icon-star' %}
+          {% render 'icon-star' %}
+          {% render 'icon-star' %}
+          {% render 'icon-star' %}
+          {% render 'icon-star' %}
+        </div>
+      {% endif %}
       <h2 class="f2 font-medium text-xs">
         {{ section.settings.collection.title | default: 'Title text' | capitalize }}
       </h2>
       <p>{{ section.settings.collection.description | default: 'Description text' }}</p>
-      <a class="button button--secondary" href="{{section.settings.collection.url}}">
-        {{- section.settings['button-text'] | capitalize -}}
-      </a>
+      {% if section.settings.isButtonShow %}
+        <a class="button button--secondary" href="{{section.settings.collection.url}}">
+          {{- section.settings['button-text'] | capitalize -}}
+        </a>
+      {% endif %}
     </div>
     {% if section.settings.collection.metafields.image.image.value != blank %}
       <div class="section-collection-review__media ibg {{isAnimationOn}}">
@@ -88,6 +92,18 @@
       "id": "revers_desktop",
       "label": "Reverse desktop",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "isButtonShow",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "isStarsShow",
+      "label": "Show Stars rating",
+      "default": true
     }
   ],
   "presets": [
