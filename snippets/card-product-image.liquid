@@ -1,0 +1,11 @@
+<a
+  class="desck-top-product-media-gallery-new__item ibg glightbox"
+  href="{{ media.src | image_url: width: media.width }}"
+  data-glightbox
+>
+  {% if media.src %}
+    {{ media.src | image_url: width: media.width | image_tag }}
+  {% else %}
+    {{ 'lifestyle-2' | placeholder_svg_tag }}
+  {% endif %}
+</a>

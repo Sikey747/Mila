@@ -1,0 +1,138 @@
+{% liquid
+  assign selectVariant = product.selected_variant.option1 | downcase | strip
+  assign allAltTags = ''
+  for media in product.media
+    assign altMedis = media.alt | downcase | strip
+    assign allAltTags = allAltTags | append: altMedis | append: ' '
+  endfor
+  assign alts = allAltTags | split: ' '
+  assign altSelectVariantSizes = 0
+  for alt in alts
+    if alt == selectVariant
+      assign altSelectVariantSizes = altSelectVariantSizes | plus: 1
+    endif
+  endfor
+%}
+
+<div class="product-media-gallery-new">
+  <div
+    class="slider product-media-gallery-new__mobile pswp-gallery pswp-gallery--single-column"
+  >
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for media in product.media %}
+          {% if altSelectVariantSizes > 0 %}
+            {% liquid
+              assign mediaColors = media.alt | downcase | strip | split: ' '
+            %}
+            {% for mediaColor in mediaColors %}
+              {% if mediaColor == selectVariant %}
+                <div class="swiper-slide">
+                  {% render 'card-product-image', media: media %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <div class="swiper-slide">
+              {% render 'card-product-image', media: media %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<div class="product-media-gallery-new__desck-top">
+  {% for media in product.media %}
+    {% if altSelectVariantSizes > 0 %}
+      {% liquid
+        assign mediaColors = media.alt | downcase | strip | split: ' '
+      %}
+      {% for mediaColor in mediaColors %}
+        {% if mediaColor == selectVariant %}
+          {% render 'card-product-image', media: media %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% render 'card-product-image', media: media %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .product-media-gallery-new__desck-top {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .desck-top-product-media-gallery-new__item {
+    position: relative;
+    padding-bottom: 152%;
+  }
+  section .swiper-pagination-bullet {
+    background: rgb(var(--color-background));
+    opacity: 1;
+  }
+
+  section .swiper-pagination-bullet {
+    width: 0.625rem;
+    height: 0.625rem;
+    background: rgb(var(--color-background));
+    opacity: 1;
+  }
+
+  section.product-media-gallery-new__desck-top
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0;
+  }
+
+  @media (width > 750px) {
+    .product-media-gallery-new__mobile {
+      display: none;
+    }
+    .product-media-gallery-new__desck-top {
+      display: grid;
+    }
+  }
+</style>
+
+{% comment %}
+  <script defer scr="{{ "glightbox.min.js" | asset_url }}"></script>
+  {{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<script defer src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+  const startSwiperTwoCollections = () => {
+    const configSwiper = {
+      slidesPerView: 1,
+      pagination: {
+        el: '.product-media-gallery-new .swiper-pagination',
+        clickable: 'true',
+      },
+    };
+    const configGLightbox = {
+      selector: '[data-glightbox]',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+      closeOnOutsideClick: true,
+      zoomable: true,
+    };
+
+    const gallery = GLightbox(configGLightbox);
+    const productMediaGalleryNew = new Swiper('.product-media-gallery-new .swiper', configSwiper);
+  };
+
+  window.addEventListener('DOMContentLoaded', () => startSwiperTwoCollections());
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:load', () => startSwiperTwoCollections());
+    document.addEventListener('shopify:section:reorder', () => startSwiperTwoCollections());
+  }
+</script>
