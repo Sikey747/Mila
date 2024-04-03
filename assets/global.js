@@ -1162,41 +1162,6 @@ class VariantSelects extends HTMLElement {
     if (productForm) productForm.handleErrorMessage();
   }
 
-  // changeImage(html) {
-  //   const selectColor = Array.from(html.querySelectorAll('input[name="Color"]'))
-  //     .find((input) => input.checked)
-  //     ?.value.trim()
-  //     .toLowerCase();
-  //   const productMediaContainer = html.querySelector(".product__media-list");
-  //   const mediaItem = html.querySelectorAll(".product__media-item");
-  //   let mediaItemColorSelect = [];
-  //   if (mediaItem.length > 1) {
-  //     mediaItemColorSelect = Array.from(mediaItem).filter((el) => {
-  //       if (
-  //         el.querySelector(".product__media.media img").getAttribute("alt").trim().toLowerCase() ==
-  //         selectColor
-  //       ) {
-  //         return el;
-  //       }
-  //     });
-  //   }
-
-  //   console.log(selectColor);
-  //   console.log(mediaItemColorSelect);
-
-  //   if (mediaItemColorSelect.length > 0) {
-  //     productMediaContainer.innerHTML = "";
-  //     // mediaItemColorSelect.forEach((item) => {
-  //     //   productMediaContainer.appendChild(item);
-  //     // });
-  //   } else {
-  //     productMediaContainer.innerHTML = "";
-  //     // mediaItem.forEach((item) => {
-  //     //   productMediaContainer.appendChild(item);
-  //     // });
-  //   }
-  // }
-
   renderProductInfo() {
     const requestedVariantId = this.currentVariant.id;
     const sectionId = this.dataset.originalSection
@@ -1255,6 +1220,9 @@ class VariantSelects extends HTMLElement {
         //render new image gallery
         document.querySelector(".product-media-gallery-new").innerHTML = html.querySelector(
           ".product-media-gallery-new"
+        ).innerHTML;
+        document.querySelector("#scriptProductMediaGalleryNew").innerHTML = html.querySelector(
+          "#scriptProductMediaGalleryNew"
         ).innerHTML;
         //
 

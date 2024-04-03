@@ -2631,8 +2631,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  bottom: 19%;
-  left: 40%;
+  bottom: 18%;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
   transition: color 0.3s ease-in-out;
 }

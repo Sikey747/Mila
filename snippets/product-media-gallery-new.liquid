@@ -99,40 +99,12 @@
   }
 </style>
 
+{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
+<script defer srс="{{ "glightbox.min.js" | asset_url }}"></script>
+
 {% comment %}
-  <script defer scr="{{ "glightbox.min.js" | asset_url }}"></script>
-  {{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 {% endcomment %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-<script defer src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-
-<script>
-  const startSwiperTwoCollections = () => {
-    const configSwiper = {
-      slidesPerView: 1,
-      pagination: {
-        el: '.product-media-gallery-new .swiper-pagination',
-        clickable: 'true',
-      },
-    };
-    const configGLightbox = {
-      selector: '[data-glightbox]',
-      touchNavigation: true,
-      loop: true,
-      autoplayVideos: true,
-      closeOnOutsideClick: true,
-      zoomable: true,
-    };
-
-    const gallery = GLightbox(configGLightbox);
-    const productMediaGalleryNew = new Swiper('.product-media-gallery-new .swiper', configSwiper);
-  };
-
-  window.addEventListener('DOMContentLoaded', () => startSwiperTwoCollections());
-
-  if (Shopify.designMode) {
-    document.addEventListener('shopify:section:load', () => startSwiperTwoCollections());
-    document.addEventListener('shopify:section:reorder', () => startSwiperTwoCollections());
-  }
-</script>
+<script defer srс="{{ "main-product.js" | asset_url }}"></script>
