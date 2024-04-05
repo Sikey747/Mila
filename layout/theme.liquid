@@ -297,6 +297,11 @@
       }
     </script>
 
+    {% liquid
+      render 'vite-tag' with 'theme.css'
+      render 'vite-tag' with 'theme.js'
+    %}
+
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
     <script defer src="{{ "swiper.js" |  asset_url}}"></script>
   </head>
