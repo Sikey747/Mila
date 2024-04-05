@@ -301,6 +301,7 @@
       render 'vite-tag' with '/theme.css'
       render 'vite-tag' with '/theme.js'
     %}
+    {% render 'vite-tag' with '/theme.css', preload_stylesheet: true %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
     <script defer src="{{ "swiper.js" |  asset_url}}"></script>
