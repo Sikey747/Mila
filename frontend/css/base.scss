@@ -1,0 +1,49 @@
+@import "null";
+
+@import "var";
+
+@import "layouts";
+@import "topography";
+@import "command";
+@import "animation";
+@import "details-summary";
+// @import "focus";
+@import "grid";
+@import "media";
+@import "button";
+@import "form";
+@import "field";
+@import "quantity";
+@import "modal";
+@import "cart-count-bubble";
+@import "header";
+@import "utility-bar";
+@import "announcement-bar";
+@import "badge";
+@import "swiper";
+
+//plagin
+.locale-selectors__container {
+  display: none;
+}
+
+.filter {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-800);
+  opacity: 0.2;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-top-gap {
+  padding-top: calc(-1 * var(--header-top-gap));
+}
+main {
+  --swiper-theme-color: #fff;
+  --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
+}

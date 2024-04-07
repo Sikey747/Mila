@@ -35,6 +35,14 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {%- liquid
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.js'
+    -%}
+    {%- liquid
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.js'
+    -%}
     {{ content_for_header }}
 
     {%- liquid
@@ -296,6 +304,11 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {% liquid
+      render 'vite-tag' with 'theme.css'
+      render 'vite-tag' with 'theme.js'
+    %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
     <script defer src="{{ "swiper.js" |  asset_url}}"></script>

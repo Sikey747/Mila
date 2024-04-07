@@ -1,0 +1,44 @@
+{
+  "name": "Ice shopify starter",
+  "description": "Shopify starter theme using Vite with AlpineJS, TailwindCSS, Liquid AJAX Cart, and the Shopify Vite plugin.",
+  "author": "Sergey Kudryakov",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "shopify": "shopify theme dev",
+    "dev:parallel": "npm-run-all --parallel dev shopify",
+    "build": "npm run clear && vite build",
+    "clear": "node cleanAssets.js"
+  },
+  "devDependencies": {
+    "@alpinejs/collapse": "^3.13.2",
+    "@alpinejs/focus": "^3.13.2",
+    "@alpinejs/morph": "^3.13.2",
+    "@by-association-only/vite-plugin-shopify-clean": "^1.1.0",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@tailwindcss/typography": "^0.5.10",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "alpinejs": "^3.13.2",
+    "autoprefixer": "^10.4.19",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^11.1.1",
+    "liquid-ajax-cart": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.38",
+    "postcss-import": "^14.1.0",
+    "sass": "^1.74.1",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.8",
+    "vite-plugin-clean": "^1.0.0",
+    "vite-plugin-page-reload": "^0.2.0",
+    "vite-plugin-shopify": "^3.0.1"
+  },
+  "dependencies": {
+    "vite-plugin-full-reload": "^1.1.0"
+  }
+}
