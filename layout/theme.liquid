@@ -39,10 +39,6 @@
       render 'vite-tag' with 'main.css'
       render 'vite-tag' with 'main.js'
     -%}
-    {%- liquid
-      render 'vite-tag' with 'main.css'
-      render 'vite-tag' with 'main.js'
-    -%}
     {{ content_for_header }}
 
     {%- liquid
@@ -308,6 +304,7 @@
     {% liquid
       render 'vite-tag' with 'theme.css'
       render 'vite-tag' with 'theme.js'
+      render 'vite-tag' with 'main.css'
     %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}

@@ -1221,9 +1221,16 @@ class VariantSelects extends HTMLElement {
         document.querySelector(".product-media-gallery-new").innerHTML = html.querySelector(
           ".product-media-gallery-new"
         ).innerHTML;
-        document.querySelector("#scriptProductMediaGalleryNew").innerHTML = html.querySelector(
-          "#scriptProductMediaGalleryNew"
-        ).innerHTML;
+        const scriptSrc = document
+          .querySelector("#scriptProductMediaGalleryNew")
+          .getAttribute("src");
+        console.log(scriptSrc);
+        document.querySelector("#scriptProductMediaGalleryNew").remove();
+        const script = document.createElement("script");
+        script.defer = true;
+        script.src = "URL_ВАШЕГО_СКРИПТА";
+        const scriptContainer = document.querySelector(".section-product");
+        scriptContainer.appendChild(script);
         //
 
         if (volumeNote) volumeNote.classList.remove("hidden");
