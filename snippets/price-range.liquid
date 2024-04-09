@@ -57,7 +57,7 @@
 </price-range>
 
 <div id="sliderPrice" data-range-min="0" data-range-max="{{filter.min_value.value}}"></div>
-{{ filter }}
+{{ filter | append: 'filter' }}
 {{ filter.range_max }}
 {{ filter.range_max | money_without_currency }}
 {{ filter.range_max | money_without_currency | replace: '.', '' }}
