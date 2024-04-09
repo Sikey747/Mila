@@ -1,31 +1,19 @@
-import "liquid-ajax-cart";
+// import "liquid-ajax-cart";
 
-import Alpine from "alpinejs";
-import AlpineCollapse from "@alpinejs/collapse";
-import AlpineFocus from "@alpinejs/focus";
-import AlpineMorph from "@alpinejs/morph";
-import AlpineGlobals from "../js/alpine/index.js";
-import helpers, { hasBodyClass } from "../js/helpers.js";
+// import helpers, { hasBodyClass } from "../js/helpers.js";
 
-// Dynamic imports
-hasBodyClass("product-template") && import("../js/prodify.js");
+// // Dynamic imports
+// hasBodyClass("product-template") && import("../js/prodify.js");
 
-const ns = "slayed";
+// const ns = "slayed";
 
-window.slayedNamespace = ns;
-window[ns] = window[ns] || {};
-window[ns].helpers = helpers;
+// window.slayedNamespace = ns;
+// window[ns] = window[ns] || {};
+// window[ns].helpers = helpers;
 
-for (const [key, value] of Object.entries(helpers)) {
-  window[ns].helpers[key] = value;
-}
-
-// Register and initialize AlpineJS
-window.Alpine = Alpine;
-
-Alpine.plugin([AlpineCollapse, AlpineFocus, AlpineMorph]);
-AlpineGlobals.register(Alpine);
-Alpine.start();
+// for (const [key, value] of Object.entries(helpers)) {
+//   window[ns].helpers[key] = value;
+// }
 
 // Hide the Shopify preview bar when in development
 // if (process.env.NODE_ENV === 'development') {
