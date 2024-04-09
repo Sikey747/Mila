@@ -22,6 +22,8 @@
             | image_url: width: collection.image.width, height: collection.image.height
             | image_tag
           }}
+        {% else %}
+          {{ 'collection-apparel-1' | placeholder_svg_tag }}
         {% endif %}
       </div>
     {%- endif -%}
