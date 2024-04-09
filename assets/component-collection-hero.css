@@ -100,3 +100,10 @@
 .collection-hero__inner {
   padding-bottom: 100vh;
 }
+.collection-hero__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: ;
+}
