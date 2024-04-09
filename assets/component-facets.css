@@ -1218,6 +1218,8 @@ input.mobile-facets__checkbox {
   -ms-border-radius: 999px;
   -o-border-radius: 999px;
   position: relative;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .input__checkbox svg {
