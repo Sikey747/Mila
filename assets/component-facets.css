@@ -40,9 +40,9 @@
 }
 
 @media screen and (min-width: 990px) {
-  .facet-filters {
+  /* .facet-filters {
     padding-left: 3rem;
-  }
+  } */
 }
 
 .facet-filters__label {
