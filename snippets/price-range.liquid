@@ -58,7 +58,4 @@
 
 <div id="sliderPrice" data-range-min="0" data-range-max="{{ filter.range_max | money_without_currency}}"></div>
 
-{{ filter.range_max | money_without_currency | append: 'filterCarrensy' }}
-{{ filter.range_max | money_without_currency | replace: '.', '' | append: 'filterReaplase' }}
-{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' | append: 'filterreplase2' }}
 {% render 'vite-tag' with 'price-range-slider.js' %}
