@@ -56,10 +56,10 @@
   </div>
 </price-range>
 
-<div id="sliderPrice" data-range-min="{{filter.max_value.value}}" data-range-max="{{filter.min_value.value}}"></div>
-{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}
+<div id="sliderPrice" data-range-min="0" data-range-max="{{filter.min_value.value}}"></div>
 {{ filter }}
 {{ filter.range_max }}
 {{ filter.range_max | money_without_currency }}
-
+{{ filter.range_max | money_without_currency | replace: '.', '' }}
+{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}
 {% render 'vite-tag' with 'price-range-slider.js' %}
