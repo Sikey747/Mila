@@ -57,5 +57,5 @@
 </price-range>
 
 <div id="sliderPrice" data-range-min="{{filter.max_value.value}}" data-range-max="{{filter.min_value.value}}"></div>
-
+{{ filter | json }}
 {% render 'vite-tag' with 'price-range-slider.js' %}
