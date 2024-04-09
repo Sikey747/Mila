@@ -1209,3 +1209,12 @@ input.mobile-facets__checkbox {
   align-items: center;
   gap: 0.3125rem;
 }
+
+.input__checkbox {
+  background-color: var(--gray-400);
+  border-radius: 999px;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+}
