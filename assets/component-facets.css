@@ -1042,7 +1042,7 @@ input.mobile-facets__checkbox {
     display: flex;
     gap: 3.125rem;
   }
-  .facets-vertical asid {
+  .facets-vertical aside {
     display: flex;
     flex-direction: column;
     flex: 1 1 19.3%;
