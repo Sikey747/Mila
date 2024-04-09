@@ -4,7 +4,7 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner ibg {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {% if collection.image.src %}
-      {{ collection.image.src | image_url: width: collection.image.width, height: collection.image.height | image_tag }}
+      {{ collection.image.src | image_url: width: '5000px' | image_tag }}
     {% else %}
       {{ 'collection-apparel-1' | placeholder_svg_tag }}
     {% endif %}
