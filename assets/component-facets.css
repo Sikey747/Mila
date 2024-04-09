@@ -321,6 +321,11 @@
   display: flex;
   align-items: center;
 }
+.facets-layout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
 
 /* Hover/focus state */
 .facets-layout-list .facets__label:hover .facet-checkbox__text,
