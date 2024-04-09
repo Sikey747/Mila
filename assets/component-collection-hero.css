@@ -105,3 +105,6 @@
   position: relative;
   height: 100vh;
 }
+.collection-hero__description {
+  max-width: 40.625rem;
+}
