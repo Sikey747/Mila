@@ -347,12 +347,11 @@
 }
 
 .facet-checkbox {
-  /* padding: 1rem 2rem 1rem 0;
-  flex-grow: 1; */
   position: relative;
-  /* font-size: 1.4rem; */
   display: flex;
   word-break: break-word;
+  align-items: center;
+  gap: 0.625rem;
 }
 
 /* Hover, active, and focus states */
