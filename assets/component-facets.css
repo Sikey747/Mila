@@ -1205,7 +1205,7 @@ input.mobile-facets__checkbox {
   }
 }
 
-.summary > div {
+summary.facets__summary > div {
   display: flex;
   justify-content: space-between;
   width: 100%;
