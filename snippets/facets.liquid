@@ -132,9 +132,7 @@
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' and forloop.index == 1 %}
-                      open
-                    {% endif %}
+                    open
                   >
                     <summary
                       class="facets__summary caption-large focus-offset"
@@ -143,11 +141,6 @@
                       <div>
                         <span class="facets__summary-label">
                           {{- filter.label | escape }}
-                          {%- if filter_type == 'vertical' -%}
-                            <span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}">
-                              ({{ filter.active_values.size }})</span
-                            >
-                          {%- endif -%}
                         </span>
                         {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
                           <span class="facets__and-helptext">
@@ -230,31 +223,11 @@
                                     %}
                                   </div>
                                 {% else %}
-                                  <svg
-                                    width="1.6rem"
-                                    height="1.6rem"
-                                    viewBox="0 0 16 16"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                  >
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                  </svg>
-
-                                  <svg
-                                    aria-hidden="true"
-                                    class="icon icon-checkmark"
-                                    width="1.1rem"
-                                    height="0.7rem"
-                                    viewBox="0 0 11 7"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
-                                      stroke="currentColor"
-                                      stroke-width="1.75"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round" />
-                                  </svg>
+                                  <div class="input__checkbox">
+                                    {% if value.active %}
+                                      {% render 'icon-checked' %}
+                                    {% endif %}
+                                  </div>
                                 {% endif %}
 
                                 <span class="facet-checkbox__text" aria-hidden="true">
@@ -368,9 +341,7 @@
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' and forloop.index == 1 %}
-                      open
-                    {% endif %}
+                    open
                   >
                     <summary class="facets__summary caption-large focus-offset">
                       <div>
@@ -382,76 +353,7 @@
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
-                      <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
-                        {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
-                        <span class="facets__selected">
-                          {{- 'products.facets.max_price' | t: price: max_price_amount -}}
-                        </span>
-                        {%- if filter_type != 'vertical' -%}
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.reset' | t }}
-                            </a>
-                          </facet-remove>
-                        {%- endif -%}
-                      </div>
-                      <price-range class="facets__price">
-                        <span class="field-currency">{{ cart.currency.symbol }}</span>
-                        <div class="field">
-                          <input
-                            class="field__input"
-                            name="{{ filter.min_value.param_name }}"
-                            id="Filter-{{ filter.label | escape }}-GTE"
-                            {%- if filter.min_value.value -%}
-                              {%- if uses_comma_decimals -%}
-                                value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                              {%- else -%}
-                                value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
-                              {%- endif %}
-                            {%- endif -%}
-                            type="number"
-                            placeholder="0"
-                            min="0"
-                            {%- if uses_comma_decimals -%}
-                              max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                            {%- else -%}
-                              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                            {% endif %}
-                          >
-                          <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">
-                            {{- 'products.facets.from' | t -}}
-                          </label>
-                        </div>
-                        {%- if filter_type != 'vertical' -%}
-                          <span class="field-currency">{{ cart.currency.symbol }}</span>
-                        {%- endif -%}
-                        <div class="field">
-                          <input
-                            class="field__input"
-                            name="{{ filter.max_value.param_name }}"
-                            id="Filter-{{ filter.label | escape }}-LTE"
-                            {%- if filter.max_value.value -%}
-                              {%- if uses_comma_decimals -%}
-                                value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                              {%- else -%}
-                                value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
-                              {%- endif %}
-                            {%- endif -%}
-                            type="number"
-                            min="0"
-                            {%- if uses_comma_decimals -%}
-                              placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                              max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                            {%- else -%}
-                              placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                              max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                            {% endif %}
-                          >
-                          <label class="field__label" for="Filter-{{ filter.label | escape }}-LTE">
-                            {{- 'products.facets.to' | t -}}
-                          </label>
-                        </div>
-                      </price-range>
+                      {% render 'price-range', filter: filter %}
                     </div>
                   </details>
               {% endcase %}

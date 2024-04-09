@@ -11,10 +11,6 @@ var _vitePluginShopify = _interopRequireDefault(require("vite-plugin-shopify"));
 
 var _vitePluginPageReload = _interopRequireDefault(require("vite-plugin-page-reload"));
 
-var _vitePluginShopifyClean = _interopRequireDefault(require("@by-association-only/vite-plugin-shopify-clean"));
-
-var _vitePluginClean = _interopRequireDefault(require("vite-plugin-clean"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = (0, _vite.defineConfig)({
