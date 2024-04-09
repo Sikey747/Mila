@@ -231,7 +231,9 @@
                                   </div>
                                 {% else %}
                                   <div class="input__checkbox">
-                                    {% render 'icon-checked' %}
+                                    {% if value.active %}
+                                      {% render 'icon-checked' %}
+                                    {% endif %}
                                   </div>
                                 {% endif %}
 
