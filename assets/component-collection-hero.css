@@ -96,10 +96,6 @@
     min-height: 20rem;
   }
 } */
-
-.collection-hero__inner {
-  padding-bottom: 100vh;
-}
 .collection-hero__text-wrapper {
   display: flex;
   flex-direction: column;
@@ -107,4 +103,5 @@
   justify-content: center;
   gap: 1.875rem;
   position: relative;
+  height: 100vh;
 }
