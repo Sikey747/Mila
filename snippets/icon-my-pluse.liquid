@@ -7,8 +7,17 @@
     height: 10px;
     width: 10px;
   }
-  .icon-pluse-span::after,
+
   .icon-pluse-span::before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+    background-color: rgb(var(--color-foreground));
+  }
+  .icon-pluse-span::after {
     position: absolute;
     content: '';
     width: 15px;
