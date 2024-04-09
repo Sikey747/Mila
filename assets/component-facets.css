@@ -73,9 +73,9 @@
 }
 
 .facet-filters__field {
-  align-items: center;
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  gap: 1.25rem;
   justify-content: flex-end;
 }
 
