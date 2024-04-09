@@ -1201,3 +1201,11 @@ input.mobile-facets__checkbox {
     padding: 0 1rem 1rem;
   }
 }
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 0.3125rem;
+}
