@@ -1062,7 +1062,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets__disclosure-vertical:not(:first-child) {
-    border-top: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-top: 1px solid rgb(var(--color-foreground));
     margin-right: 0;
   }
 
