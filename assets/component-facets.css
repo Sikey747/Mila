@@ -1061,7 +1061,7 @@ input.mobile-facets__checkbox {
     width: 26rem;
   }
 
-  .facets__disclosure-vertical:not(:first-child) {
+  .facets__disclosure-vertical:not(:first-of-type) {
     border-top: 1px solid rgb(var(--color-foreground));
     margin-right: 0;
   }
