@@ -31,13 +31,16 @@
   }
 }
 
-/* .facet-filters {
-  align-items: flex-start;
+.facet-filters {
+  /* align-items: flex-start;
   display: flex;
   grid-column: 2;
   grid-row: 1;
-  padding-left: 2.5rem;
-} */
+  padding-left: 2.5rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 @media screen and (min-width: 990px) {
   /* .facet-filters {
