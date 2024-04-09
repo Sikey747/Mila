@@ -1044,6 +1044,7 @@ input.mobile-facets__checkbox {
   .facets-vertical acid {
     display: flex;
     flex-direction: column;
+    flex: 1 1 19.3%;
   }
 
   .facets-wrap-vertical {
