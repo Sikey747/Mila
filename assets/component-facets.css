@@ -1096,7 +1096,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .product-grid-container {
-    width: 100%;
+    flex: 1 1 76.4%;
   }
 
   .facets-vertical-form {
