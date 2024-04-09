@@ -96,3 +96,7 @@
     min-height: 20rem;
   }
 } */
+
+.collection-hero__inner {
+  padding-bottom: 100vh;
+}
