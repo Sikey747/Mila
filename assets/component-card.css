@@ -362,9 +362,9 @@
   overflow: hidden;
 }
 
-.card-information > * + * {
+/* .card-information > * + * {
   margin-top: 0.5rem;
-}
+} */
 
 .card-information {
   width: 100%;
