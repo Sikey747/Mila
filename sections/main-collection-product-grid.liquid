@@ -57,7 +57,7 @@
         </aside>
       {%- endif -%}
 
-      {% render 'product-grid', settings: settings, collection: collection %}
+      {% render 'product-grid', settings: settings, collection: collection, section: section %}
     </div>
   {%- endpaginate -%}
   {% if section.settings.image_shape == 'arch' %}
