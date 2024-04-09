@@ -3,81 +3,30 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "color_scheme": "scheme-2"
-      }
-    },
-    "slide_collections_dHekBV": {
-      "type": "slide-collections",
-      "blocks": {
-        "slide_wW3gWi": {
-          "type": "slide",
-          "settings": {
-            "slide_collection": "black-friday"
-          }
-        },
-        "slide_pbQL8t": {
-          "type": "slide",
-          "settings": {
-            "slide_collection": "maximum-impact"
-          }
-        },
-        "slide_tphwPD": {
-          "type": "slide",
-          "settings": {
-            "slide_collection": "the-elite-story"
-          }
-        },
-        "slide_VgtTMh": {
-          "type": "slide",
-          "settings": {
-            "slide_collection": "best-sellers"
-          }
-        },
-        "slide_BTKtTy": {
-          "type": "slide",
-          "settings": {
-            "slide_collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_wW3gWi",
-        "slide_pbQL8t",
-        "slide_tphwPD",
-        "slide_VgtTMh",
-        "slide_BTKtTy"
-      ],
-      "settings": {
-        "heading": "Featured Collections",
-        "auto_rotate": true,
-        "change_slides_speed": 10,
-        "color_scheme": ""
+        "color_scheme": "scheme-1"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 12,
-        "columns_desktop": 3,
+        "products_per_page": 16,
+        "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
         "enable_filtering": true,
-        "filter_type": "vertical",
+        "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "columns_mobile": "2"
       }
     }
   },
   "order": [
     "banner",
-    "slide_collections_dHekBV",
     "product-grid"
   ]
 }
