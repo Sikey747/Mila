@@ -60,5 +60,6 @@
 {{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}
 {{ filter }}
 {{ filter.range_max }}
-{{  }}
+{{ filter.range_max | money_without_currency }}
+
 {% render 'vite-tag' with 'price-range-slider.js' %}
