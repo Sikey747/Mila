@@ -6,47 +6,45 @@
         "color_scheme": "scheme-1"
       }
     },
-    "slide_collection_bwVJp4": {
-      "type": "slide-collection",
+    "slide_collections_q7hEat": {
+      "type": "slide-collections",
       "blocks": {
-        "slide_zarjEX": {
+        "slide_hVqRLU": {
           "type": "slide",
           "settings": {
-            "slide_collection": "black-friday",
-            "heading": "Image slide",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "black-friday"
           }
         },
-        "slide_nEp6tF": {
+        "slide_bHJFCV": {
           "type": "slide",
           "settings": {
-            "slide_collection": "the-elite-story",
-            "heading": "Image slide",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "maximum-impact"
           }
         },
-        "slide_gYAUqz": {
+        "slide_8X4XYf": {
           "type": "slide",
           "settings": {
-            "slide_collection": "the-elite-story",
-            "heading": "Image slide",
-            "link": "",
-            "show_text_box": true
+            "slide_collection": "the-elite-story"
+          }
+        },
+        "slide_WAanBn": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "all-products"
           }
         }
       },
       "block_order": [
-        "slide_zarjEX",
-        "slide_nEp6tF",
-        "slide_gYAUqz"
+        "slide_hVqRLU",
+        "slide_bHJFCV",
+        "slide_8X4XYf",
+        "slide_WAanBn"
       ],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 6,
-        "color_scheme": "",
-        "button_label": "Button label"
+        "heading": "Our Collections",
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": ""
       }
     },
     "product-grid": {
@@ -70,7 +68,7 @@
   },
   "order": [
     "banner",
-    "slide_collection_bwVJp4",
+    "slide_collections_q7hEat",
     "product-grid"
   ]
 }
