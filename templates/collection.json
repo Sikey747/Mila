@@ -25,10 +25,45 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "slide_collections_dHekBV": {
+      "type": "slide-collections",
+      "blocks": {
+        "slide_wW3gWi": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "black-friday"
+          }
+        },
+        "slide_pbQL8t": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "maximum-impact"
+          }
+        },
+        "slide_tphwPD": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "the-elite-story"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wW3gWi",
+        "slide_pbQL8t",
+        "slide_tphwPD"
+      ],
+      "settings": {
+        "heading": "Our Collections",
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "slide_collections_dHekBV"
   ]
 }
