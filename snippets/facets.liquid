@@ -353,7 +353,7 @@
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
-                      {% render 'price-range' %}
+                      {% render 'price-range', filter: filter %}
                     </div>
                   </details>
               {% endcase %}
