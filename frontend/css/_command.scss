@@ -647,3 +647,16 @@ h3 .icon-arrow,
   height: 100%;
   object-fit: cover;
 }
+
+.filter {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-800);
+  opacity: 0.2;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}

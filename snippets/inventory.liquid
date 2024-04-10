@@ -1,0 +1,30 @@
+{% liquid
+  for variant in product.variants
+    if variant.selected
+      assign selectVariant = variant
+    endif
+  endfor
+
+  if selectVariant.inventory_quantity >= 75
+    assign colorType = 'product__inventory_good'
+  elsif selectVariant.inventory_quantity >= 15 and selectVariant.inventory_quantity <= 75
+    assign colorType = 'product__inventory_normal'
+  elsif selectVariant.inventory_quantity <= 15
+    assign colorType = 'product__inventory_bad'
+  endif
+%}
+
+<div class="product__inventory-wrapper">
+  <p class="product__inventory-text">{{ selectVariant.inventory_quantity }} in stock</p>
+  <div
+    class="product__inventory {{ colorType }} no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+    {{ block.shopify_attributes }}
+    id="Inventory-{{ section.id }}"
+    role="status"
+    {% if selectVariant.inventory_quantity > 100 %}
+      style="--inventory-width:100%"
+    {% else %}
+      style="--inventory-width:{{selectVariant.inventory_quantity}}%"
+    {% endif %}
+  ></div>
+</div>

@@ -1218,20 +1218,16 @@ class VariantSelects extends HTMLElement {
         const volumeNote = document.getElementById(`Volume-Note-${this.dataset.section}`);
 
         //render new image gallery
-        document.querySelector(".product-media-gallery-new").innerHTML = html.querySelector(
-          ".product-media-gallery-new"
+        document.querySelector(".product__media-wrapper").innerHTML =
+          html.querySelector(".product__media-wrapper").innerHTML;
+        // function from product-media-gallery-new.liquid
+        const activeProductMediaGalleryEvent = new Event("activeProductMediaGallery");
+        document.dispatchEvent(activeProductMediaGalleryEvent);
+
+        //product__inventory
+        document.querySelector(".product__inventory-wrapper").innerHTML = html.querySelector(
+          ".product__inventory-wrapper"
         ).innerHTML;
-        const scriptSrc = document
-          .querySelector("#scriptProductMediaGalleryNew")
-          .getAttribute("src");
-        console.log(scriptSrc);
-        document.querySelector("#scriptProductMediaGalleryNew").remove();
-        const script = document.createElement("script");
-        script.defer = true;
-        script.src = "URL_ВАШЕГО_СКРИПТА";
-        const scriptContainer = document.querySelector(".section-product");
-        scriptContainer.appendChild(script);
-        //
 
         if (volumeNote) volumeNote.classList.remove("hidden");
         if (volumePricingDestination) volumePricingDestination.classList.remove("hidden");

@@ -1,6 +1,12 @@
 {
+  "frontend/entrypoints/glightbox.js": {
+    "file": "glightbox-Boea-S8H.js",
+    "name": "glightbox",
+    "src": "frontend/entrypoints/glightbox.js",
+    "isEntry": true
+  },
   "frontend/entrypoints/theme.css": {
-    "file": "theme-BBv8dKKA.css",
+    "file": "theme-D1KCuP3q.css",
     "src": "frontend/entrypoints/theme.css",
     "isEntry": true
   },

@@ -61,78 +61,15 @@
   {% endfor %}
 </div>
 
-<style>
-  .product-media-gallery-new__desck-top {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .desck-top-product-media-gallery-new__item {
-    position: relative;
-    padding-bottom: 152%;
-  }
-  section .swiper-pagination-bullet {
-    background: rgb(var(--color-background));
-    opacity: 1;
-  }
-
-  section .swiper-pagination-bullet {
-    width: 0.625rem;
-    height: 0.625rem;
-    background: rgb(var(--color-background));
-    opacity: 1;
-  }
-
-  section.product-media-gallery-new__desck-top
-    .swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    margin: 0;
-  }
-
-  @media (width > 750px) {
-    .product-media-gallery-new__mobile {
-      display: none;
-    }
-    .product-media-gallery-new__desck-top {
-      display: grid;
-    }
-  }
-</style>
-
+{{ 'product-media-gallery-new.css' | asset_url | stylesheet_tag }}
+{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
+{% comment %} <script defer srс="{{ 'glightbox.js' | asset_url }}"></script> {% endcomment %}
+{% liquid
+  render 'vite-tag' with 'glightbox.js'
+%}
 {% comment %}
-  {{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
-  <script defer srс="{{ 'glightbox.min.js' | asset_url }}"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 {% endcomment %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-<script defer src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-
-<script defer id="scriptProductMediaGalleryNew">
-  const startSwiperTwoCollections = () => {
-    const configSwiper = {
-      slidesPerView: 1,
-      pagination: {
-        el: '.product-media-gallery-new .swiper-pagination',
-        clickable: 'true',
-      },
-    };
-    const configGLightbox = {
-      selector: '[data-glightbox]',
-      touchNavigation: true,
-      loop: true,
-      autoplayVideos: true,
-      closeOnOutsideClick: true,
-      zoomable: true,
-    };
-
-    const gallery = GLightbox(configGLightbox);
-    const productMediaGalleryNew = new Swiper('.product-media-gallery-new .swiper', configSwiper);
-  };
-
-  window.addEventListener('DOMContentLoaded', () => startSwiperTwoCollections());
-
-  if (Shopify.designMode) {
-    document.addEventListener('shopify:section:load', () => startSwiperTwoCollections());
-    document.addEventListener('shopify:section:reorder', () => startSwiperTwoCollections());
-  }
-</script>
+<script defer src="{{ "product-media-gallery-new.js" | asset_url }}"></script>

@@ -9,7 +9,7 @@
     "dev": "vite dev",
     "shopify": "shopify theme dev",
     "dev:parallel": "npm-run-all --parallel dev shopify",
-    "build": "npm run clear && vite build",
+    "build": "clear && vite build",
     "clear": "node cleanAssets.js"
   },
   "devDependencies": {

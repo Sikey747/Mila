@@ -303,8 +303,6 @@
 
     {% liquid
       render 'vite-tag' with 'theme.css'
-      render 'vite-tag' with 'theme.js'
-      render 'vite-tag' with 'main.css'
     %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
