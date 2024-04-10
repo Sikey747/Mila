@@ -8,7 +8,6 @@
           "settings": {
             "slide_collection": "maximum-impact",
             "heading": "Image slide",
-            "button_label": "Button label",
             "link": "",
             "show_text_box": true
           }
@@ -18,7 +17,6 @@
           "settings": {
             "slide_collection": "coll",
             "heading": "Image slide",
-            "button_label": "Button label",
             "link": "",
             "show_text_box": true
           }
@@ -28,7 +26,6 @@
           "settings": {
             "slide_collection": "bages",
             "heading": "Image slide",
-            "button_label": "Button label",
             "link": "",
             "show_text_box": true
           }

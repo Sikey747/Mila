@@ -3,34 +3,72 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
         "color_scheme": "scheme-1"
+      }
+    },
+    "slide_collections_q7hEat": {
+      "type": "slide-collections",
+      "blocks": {
+        "slide_hVqRLU": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "black-friday"
+          }
+        },
+        "slide_bHJFCV": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "maximum-impact"
+          }
+        },
+        "slide_8X4XYf": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "the-elite-story"
+          }
+        },
+        "slide_WAanBn": {
+          "type": "slide",
+          "settings": {
+            "slide_collection": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hVqRLU",
+        "slide_bHJFCV",
+        "slide_8X4XYf",
+        "slide_WAanBn"
+      ],
+      "settings": {
+        "heading": "Our Collections",
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": ""
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
+        "products_per_page": 10,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
         "enable_filtering": true,
-        "filter_type": "horizontal",
+        "filter_type": "vertical",
         "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "columns_mobile": "2"
       }
     }
   },
   "order": [
     "banner",
+    "slide_collections_q7hEat",
     "product-grid"
   ]
 }
