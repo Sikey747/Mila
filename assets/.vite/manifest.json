@@ -11,18 +11,9 @@
     "isEntry": true
   },
   "frontend/entrypoints/theme.js": {
-    "file": "theme-CAsFjLgD.js",
+    "file": "theme-l0sNRNKZ.js",
     "name": "theme",
     "src": "frontend/entrypoints/theme.js",
-    "isEntry": true,
-    "dynamicImports": [
-      "frontend/js/prodify.js"
-    ]
-  },
-  "frontend/js/prodify.js": {
-    "file": "prodify-RNfAc_SV.js",
-    "name": "prodify",
-    "src": "frontend/js/prodify.js",
-    "isDynamicEntry": true
+    "isEntry": true
   }
 }

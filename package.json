@@ -7,21 +7,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "shopify": "shopify theme dev",
+    "shopify": "shopify theme dev --environment development",
     "dev:parallel": "npm-run-all --parallel dev shopify",
     "build": "clear && vite build",
     "clear": "node cleanAssets.js"
   },
   "devDependencies": {
-    "@alpinejs/collapse": "^3.13.2",
-    "@alpinejs/focus": "^3.13.2",
-    "@alpinejs/morph": "^3.13.2",
-    "@by-association-only/vite-plugin-shopify-clean": "^1.1.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.10",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
-    "alpinejs": "^3.13.2",
     "autoprefixer": "^10.4.19",
     "chokidar": "^3.5.3",
     "concurrently": "^8.2.2",
@@ -39,6 +34,7 @@
     "vite-plugin-shopify": "^3.0.1"
   },
   "dependencies": {
+    "nouislider": "^15.7.1",
     "vite-plugin-full-reload": "^1.1.0"
   }
 }
