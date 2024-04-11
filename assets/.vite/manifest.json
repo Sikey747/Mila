@@ -5,6 +5,15 @@
     "src": "frontend/entrypoints/glightbox.js",
     "isEntry": true
   },
+  "frontend/entrypoints/price-range-slider.js": {
+    "file": "price-range-slider-CFJJ5S6m.js",
+    "name": "price-range-slider",
+    "src": "frontend/entrypoints/price-range-slider.js",
+    "isEntry": true,
+    "css": [
+      "price-range-slider-B7YUclGY.css"
+    ]
+  },
   "frontend/entrypoints/theme.css": {
     "file": "theme-D1KCuP3q.css",
     "src": "frontend/entrypoints/theme.css",
