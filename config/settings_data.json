@@ -1,8 +1,8 @@
 {
   "current": {
-    "logo": "shopify://shop_images/Vector_2.svg",
+    "logo": "shopify:\/\/shop_images\/Vector_2.svg",
     "logo_width": 90,
-    "favicon": "shopify://shop_images/Vector_4_2537ddb8-7c1d-4478-b4e2-f319dddcb31c.svg",
+    "favicon": "shopify:\/\/shop_images\/Vector_4_2537ddb8-7c1d-4478-b4e2-f319dddcb31c.svg",
     "type_header_font": "avenir_next_n4",
     "heading_scale": 100,
     "type_body_font": "avenir_next_n4",
@@ -99,7 +99,7 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_description": "<p><\/p>",
     "brand_image_width": 100,
     "social_facebook_link": "www.facebook.com",
     "social_instagram_link": "www.instagram.com",
@@ -119,7 +119,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "checkout_header_image": "shopify://shop_images/Paste_image_3.jpg",
+    "checkout_header_image": "shopify:\/\/shop_images\/Paste_image_3.jpg",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -134,7 +134,9 @@
         }
       }
     },
-    "content_for_index": [],
+    "content_for_index": [
+
+    ],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -371,7 +373,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_description": "<p><\/p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
