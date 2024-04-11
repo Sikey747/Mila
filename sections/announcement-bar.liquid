@@ -402,13 +402,8 @@ some fixe text
       </div>
     </div>
   </div>
-{% else %}
-  <style>
-    :root {
-      --announcement-bar-high: 0;
-    }
-  </style>
-{% endif %}
+
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
@@ -417,12 +412,6 @@ some fixe text
     "groups": ["header"]
   },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "home_page_only",
-      "label": "Home page only show",
-      "default": true
-    },
     {
       "type": "checkbox",
       "id": "home_page_only",
