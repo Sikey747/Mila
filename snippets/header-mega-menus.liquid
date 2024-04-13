@@ -163,7 +163,7 @@
     const header = document.querySelector('header');
     const toogleMegaMenu = () => {
       header.classList.toggle('mega_menu_open');
-      document.querySelector('.content-for-layout').classList.toggle('mega_menu_open');
+      document.querySelector('.content-for-layout').classList.remove('mega_menu_open');
     };
     megaMenuBtn.forEach((el) => {
       el.addEventListener('click', (event) => {
