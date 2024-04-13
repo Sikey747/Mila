@@ -58,31 +58,31 @@
             "slide_collection": "maximum-impact"
           }
         },
-        "slide_3nDGRG": {
+        "slide_jwyLDb": {
           "type": "slide",
           "settings": {
-            "slide_collection": "coll"
+            "slide_collection": "best-sellers"
           }
         },
-        "slide_7D6chF": {
+        "slide_gxrXqe": {
           "type": "slide",
           "settings": {
-            "slide_collection": "up-selll"
+            "slide_collection": "tango"
           }
         },
-        "slide_kQEh6L": {
+        "slide_mdJWVg": {
           "type": "slide",
           "settings": {
-            "slide_collection": "frontpage"
+            "slide_collection": "the-elite-story"
           }
         }
       },
       "block_order": [
         "slide_LkhEcR",
         "slide_ELJVRd",
-        "slide_3nDGRG",
-        "slide_7D6chF",
-        "slide_kQEh6L"
+        "slide_jwyLDb",
+        "slide_gxrXqe",
+        "slide_mdJWVg"
       ],
       "settings": {
         "heading": "Our Collections",
