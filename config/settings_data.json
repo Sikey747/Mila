@@ -1,6 +1,9 @@
 {
   "current": {
+    "swatchType": "variantImage",
     "swatchColors": "Vermont:#00908C\nBlack:#000000\nWhite:#f5f5f5\nBlue:#005eff\nRed:#c9002c\nPink:#ffd5e6\nBrown:#a2896b\nOlive:#808000\nGreenRed:#008000#c9002c\nGreenRedBlue:#008000#c9002c#005eff",
+    "swatchStyle": "portrait",
+    "swatchSize": 64,
     "logo": "shopify:\/\/shop_images\/Vector_2.svg",
     "logo_width": 90,
     "favicon": "shopify:\/\/shop_images\/Vector_4_2537ddb8-7c1d-4478-b4e2-f319dddcb31c.svg",
