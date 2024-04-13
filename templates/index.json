@@ -276,6 +276,92 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "multicolumn_n3iXPc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6N4dpH": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_kFdxyD": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xwkYET": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6N4dpH",
+        "column_kFdxyD",
+        "column_xwkYET"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_marquee_4NkU7H": {
+      "type": "section-marquee",
+      "blocks": {
+        "block_image_AbedwQ": {
+          "type": "block-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_24.jpg"
+          }
+        },
+        "block_image_XqpGVG": {
+          "type": "block-image",
+          "settings": {
+          }
+        },
+        "block_image_R8Vhpw": {
+          "type": "block-image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "block_image_AbedwQ",
+        "block_image_XqpGVG",
+        "block_image_R8Vhpw"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "text-solid": "Black",
+        "text-border": "Friday",
+        "isAnimationOn": true,
+        "rightAnimation": true
+      }
     }
   },
   "order": [
@@ -286,6 +372,8 @@
     "section_collection_review_F4aL4t",
     "text_on_bacground_wF4KHV",
     "section_collection_review_UYcbic",
-    "featured_product_DLB7Vr"
+    "featured_product_DLB7Vr",
+    "multicolumn_n3iXPc",
+    "section_marquee_4NkU7H"
   ]
 }
