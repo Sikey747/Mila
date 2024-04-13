@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "shopify": "shopify theme dev",
+    "shopify": "shopify theme dev --environment development",
     "dev:parallel": "npm-run-all --parallel dev shopify",
     "build": "clear && vite build",
     "clear": "node cleanAssets.js"

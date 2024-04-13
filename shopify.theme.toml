@@ -1,13 +1,3 @@
 [environments.development]
 store = "ice-test1"
 theme = "Mila"
-
-[environments.staging]
-store = "ice-test1"
-theme = "Mila"
-ignore = ["templates/*", "config/*"]
-
-[environments.production]
-store = "ice-test1"
-theme = "Mila"
-ignore = ["templates/*", "config/*"]
