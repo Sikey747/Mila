@@ -216,6 +216,48 @@
         "isTagsShow": true
       }
     },
+    "multicolumn_product_bNgWPY": {
+      "type": "multicolumn-product",
+      "blocks": {
+        "product_item_pc3KGw": {
+          "type": "product-item",
+          "settings": {
+            "product": "tango-with-me"
+          }
+        },
+        "product_item_niV4Tb": {
+          "type": "product-item",
+          "settings": {
+            "product": "cross-front-multifit-bra-top-1"
+          }
+        },
+        "product_item_E8KHhD": {
+          "type": "product-item",
+          "settings": {
+            "product": "cross-front-multifit-bra-top"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_pc3KGw",
+        "product_item_niV4Tb",
+        "product_item_E8KHhD"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "section-headers": "More for you. Tango with us.",
+        "button-text": "Shop now"
+      }
+    },
+    "slide_products_eayKPx": {
+      "type": "slide-products",
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": "",
+        "collection": "black-friday"
+      }
+    },
     "section_marquee_4NkU7H": {
       "type": "section-marquee",
       "blocks": {
@@ -256,15 +298,6 @@
         "text-border": "Friday",
         "isAnimationOn": true,
         "rightAnimation": true
-      }
-    },
-    "slide_products_eayKPx": {
-      "type": "slide-products",
-      "settings": {
-        "auto_rotate": true,
-        "change_slides_speed": 10,
-        "color_scheme": "",
-        "collection": "black-friday"
       }
     },
     "featured_product_DLB7Vr": {
@@ -381,8 +414,9 @@
     "section_collection_review_F4aL4t",
     "text_on_bacground_wF4KHV",
     "section_collection_review_UYcbic",
-    "section_marquee_4NkU7H",
+    "multicolumn_product_bNgWPY",
     "slide_products_eayKPx",
+    "section_marquee_4NkU7H",
     "featured_product_DLB7Vr",
     "new_articles_Lmz6BM"
   ]
