@@ -216,57 +216,46 @@
         "isTagsShow": true
       }
     },
-    "multicolumn_n3iXPc": {
-      "type": "multicolumn",
+    "multicolumn_product_bNgWPY": {
+      "type": "multicolumn-product",
       "blocks": {
-        "column_6N4dpH": {
-          "type": "column",
+        "product_item_pc3KGw": {
+          "type": "product-item",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "product": "tango-with-me"
           }
         },
-        "column_kFdxyD": {
-          "type": "column",
+        "product_item_niV4Tb": {
+          "type": "product-item",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "product": "cross-front-multifit-bra-top-1"
           }
         },
-        "column_xwkYET": {
-          "type": "column",
+        "product_item_E8KHhD": {
+          "type": "product-item",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "product": "cross-front-multifit-bra-top"
           }
         }
       },
       "block_order": [
-        "column_6N4dpH",
-        "column_kFdxyD",
-        "column_xwkYET"
+        "product_item_pc3KGw",
+        "product_item_niV4Tb",
+        "product_item_E8KHhD"
       ],
       "settings": {
-        "title": "More for you. Tango with us.",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "scheme-4",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "",
+        "section-headers": "More for you. Tango with us.",
+        "button-text": "Shop now"
+      }
+    },
+    "slide_products_eayKPx": {
+      "type": "slide-products",
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": "",
+        "collection": "black-friday"
       }
     },
     "section_marquee_4NkU7H": {
@@ -425,7 +414,8 @@
     "section_collection_review_F4aL4t",
     "text_on_bacground_wF4KHV",
     "section_collection_review_UYcbic",
-    "multicolumn_n3iXPc",
+    "multicolumn_product_bNgWPY",
+    "slide_products_eayKPx",
     "section_marquee_4NkU7H",
     "featured_product_DLB7Vr",
     "new_articles_Lmz6BM"
