@@ -1,0 +1,20 @@
+<div class="card-multicolumn-product">
+  <div class="card-multicolumn-product__up">
+    <div class="card-multicolumn-product__image ibg">
+      {% if product.featured_image.src %}
+        {{ product.featured_image.src | image_url: width: '5000px' | image_tag }}
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
+    <div class="card-multicolumn-product__info">
+      <h3 class="font-medium card-multicolumn-product__title f2 text-mm">
+        {{ product.title | default: 'Title text' }}
+      </h3>
+      <p class="card-multicolumn-product__title">{{ product.description | default: 'discription text ' }}</p>
+    </div>
+  </div>
+  <div class="card-multicolumn-product__down">
+    <a href="{{ product.url }}" class="card-multicolumn-product__link link">{{ section.settings['button-text'] }}</a>
+  </div>
+</div>

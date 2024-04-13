@@ -41,7 +41,7 @@
           {% render 'icon-star' %}
         </div>
       {% endif %}
-      <h2 class="f2 font-medium text-xs">
+      <h2 class="text-xs font-medium f2">
         {{ section.settings.collection.title | default: 'Title text' | capitalize }}
       </h2>
       <p>{{ section.settings.collection.description | default: 'Description text' }}</p>
@@ -51,15 +51,21 @@
         </a>
       {% endif %}
     </div>
-    {% if section.settings.collection.metafields.image.image.value != blank %}
-      <div class="section-collection-review__media ibg {{isAnimationOn}}">
+    <div class="section-collection-review__media ibg {{isAnimationOn}}">
+      {% if section.settings.collection.metafields.image.image.value != blank %}
         {% if section.settings.collection.metafields.image.image.value %}
           {{ section.settings.collection.products.first.images.last.src | image_url: width: '5000px' | image_tag }}
         {% else %}
           {{ 'product-3' | placeholder_svg_tag }}
         {% endif %}
-      </div>
-    {% endif %}
+      {% else %}
+        {% if section.settings.collection.products.first.images.last.src %}
+          {{ section.settings.collection.products.first.images.last.src | image_url: width: '5000px' | image_tag }}
+        {% else %}
+          {{ 'product-3' | placeholder_svg_tag }}
+        {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>
 

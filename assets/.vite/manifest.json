@@ -14,8 +14,17 @@
       "price-range-slider-B7YUclGY.css"
     ]
   },
+  "frontend/entrypoints/section-slide-products.js": {
+    "file": "section-slide-products-DSd9MuU_.js",
+    "name": "section-slide-products",
+    "src": "frontend/entrypoints/section-slide-products.js",
+    "isEntry": true,
+    "css": [
+      "section-slide-products-EKmKsbKj.css"
+    ]
+  },
   "frontend/entrypoints/theme.css": {
-    "file": "theme-D1KCuP3q.css",
+    "file": "theme-DqkaDuU0.css",
     "src": "frontend/entrypoints/theme.css",
     "isEntry": true
   },

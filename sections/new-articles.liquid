@@ -23,17 +23,17 @@
             {% endif %}
             <div class="section-new_articles__slide-wrapper page-width">
               <div class="section-new_articles__top ">
-                <h2 class="section-new_articles__headers f2 text-sm font-medium">
+                <h2 class="text-sm font-medium section-new_articles__headers f2">
                   {{ section.settings['section-headers'] | upcase }}
                 </h2>
-                <a href="{{ 'blogs/news' | blog_url  }}" class="section-new_articles__all-links link text-sm">
+                <a href="{{ 'blogs/news' | blog_url  }}" class="text-sm section-new_articles__all-links link">
                   {{- section.settings['section-links-text'] | upcase -}}
                 </a>
               </div>
               <div class="section-new_articles__container ">
                 <div class="section-new_articles__main-info">
                   {{ block.settings.article.published_at | time_tag: '%B %d, %Y' }}
-                  <h3 data-swiper-bullet class="section-new_articles__title text-xl f2 font-medium">
+                  <h3 data-swiper-bullet class="text-xl font-medium section-new_articles__title f2">
                     {{ block.settings.article.title | truncate: 40 }}
                   </h3>
                   <a

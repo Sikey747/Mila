@@ -1,4 +1,5 @@
 {{ 'section-slider-collection.css' | asset_url | stylesheet_tag }}
+{% render 'full-highe-style' %}
 
 {% liquid
   if section.settings.auto_rotate
@@ -10,7 +11,7 @@
 <div
   data-autoplay="{{ autoplay }}"
   data-speed="{{ speed }}"
-  class="section-slider-collection__container color-{{ section.settings.color_scheme }}"
+  class="section-slider-collection__container  color-{{ section.settings.color_scheme }}"
 >
   <div class="section-slider-collection__inner">
     <div class="swiper">
@@ -63,7 +64,7 @@
 {
   "name": "Slide collection",
   "tag": "section",
-  "class": "section-slider-collection",
+  "class": "section-slider-collection full-height",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

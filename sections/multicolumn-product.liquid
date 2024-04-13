@@ -1,0 +1,89 @@
+{% liquid
+  if settings.animations_reveal_on_scroll
+    assign isAnimationOn = 'scroll-trigger animate--slide-in'
+  endif
+  if settings.animations_reveal_on_scroll
+    assign isCascadeOn = 'data-cascade'
+  endif
+%}
+
+{{ 'multicolumn-product.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="multicolumn-product__color color-{{ section.settings.color_scheme }} {{isAnimationOn}}"
+  {{ isCascadeOn }}
+>
+  <div class="multicolumn-product__page-width page-width">
+    <h2 class="text-xs multicolumn-product__headers f2">{{ section.settings['section-headers'] }}</h2>
+    <ul class="multicolumn-product__items">
+      {% for block in section.blocks %}
+        {% if block.type == 'product-item' %}
+          <li class="multicolumn-product__item">
+            {% render 'card-multicolumn-product', product: block.settings.product %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Multicolumn product",
+  "tag": "section",
+  "class": "multicolumn-product",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    },
+    {
+      "type": "text",
+      "id": "section-headers",
+      "label": "Section headers",
+      "default": "More for you. Tango with us."
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button text",
+      "default": "Shop now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-item",
+      "name": "Product",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn product",
+      "blocks": [
+        {
+          "type": "product-item"
+        },
+        {
+          "type": "product-item"
+        },
+        {
+          "type": "product-item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

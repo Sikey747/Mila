@@ -8,11 +8,13 @@
 
   <div class="section-slider-collection__info page-width">
     {% if slide.settings.slide_collection.tags.size > 0 %}
-      {% for tags in slide.settings.slide_collection.tags %}
-        <span class="section-slider-collection__tags text-sm">{{ tags }}</span>
-      {% endfor %}
+      <div class="section-slider-collection__tags">
+        {% for tags in slide.settings.slide_collection.tags %}
+          <span class="text-sm section-slider-collection__tags">{{ tags }}</span>
+        {% endfor %}
+      </div>
     {% else %}
-      <span class="section-slider-collection__tags text-sm">Tag</span>
+      <span class="text-sm section-slider-collection__tags">Tag</span>
     {% endif %}
 
     <h2 class="section-slider-collection__info-title">

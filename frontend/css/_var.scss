@@ -98,7 +98,10 @@
 
   --announcement-bar-high: 2.4375rem;
   --duration-announcement-bar: 250ms;
-  --header-top-gap: calc(-1 * (var(--header-height) + var(--announcement-bar-high)));
+  --header-top-gap: calc(var(--header-height));
+  --header-position: fixed;
+  --header-color-foreground: rgb(var(--color-foreground));
+  --header-color-background: rgb(var(--color-background));
 }
 
 .product-card-wrapper .card,

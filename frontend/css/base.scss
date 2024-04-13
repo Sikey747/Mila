@@ -26,7 +26,6 @@
 .locale-selectors__container {
   display: none;
 }
-
-.header-top-gap {
-  padding-top: calc(-1 * var(--header-top-gap));
+main {
+  margin-top: var(--header-top-gap);
 }

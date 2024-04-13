@@ -1,0 +1,83 @@
+{% liquid
+  if section.settings.auto_rotate
+    assign autoplay = true
+  endif
+  assign speed = section.settings.change_slides_speed | append: '000'
+%}
+
+{{ 'section-slide-products.css' | asset_url | stylesheet_tag }}
+
+<div
+  data-autoplay="{{ autoplay }}"
+  data-speed="{{ speed }}"
+  class="section-slide-products__container page-width color-{{ section.settings.color_scheme }}"
+>
+  <div class="section-slide-products__headers">
+    <h2 class="text-xs font-medium section-slide-products__title f2 tracking-m">
+      {{ section.settings.collection.title | default: 'Our Collections' }}
+    </h2>
+    <a class="section-slide-products__headers-link link" href="{{ section.settings.collection.url }}">
+      {{- 'View all' | default: 'View all' -}}
+    </a>
+  </div>
+
+  <div class="swiper">
+    <div class="swiper-wrapper ">
+      {% for product in section.settings.collection.products %}
+        <div
+          class="swiper-slide"
+        >
+          {% render 'card-slide-product', product: product %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+{% render 'vite-tag' with 'section-slide-products.js' %}
+
+{% schema %}
+{
+  "name": "Slide products",
+  "tag": "section",
+  "class": "section-slide-products",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.slideshow.settings.auto_rotate.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 2,
+      "max": 20,
+      "step": 2,
+      "unit": "s",
+      "label": "t:sections.slideshow.settings.change_slides_speed.label",
+      "default": 10
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection of products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide products"
+    }
+  ]
+}
+{% endschema %}

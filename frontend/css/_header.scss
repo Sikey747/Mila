@@ -256,7 +256,7 @@
 }
 
 .header__icon {
-  color: rgb(var(--color-background));
+  color: var(--header-color-foreground);
 }
 
 .header__icon span {
@@ -517,7 +517,7 @@ details[open] > .header__submenu {
 
 .header__menu-item {
   text-decoration: none;
-  color: rgba(var(--color-background));
+  color: var(--header-color-foreground);
 }
 
 details[open] > .header__menu-item .icon-caret {
@@ -526,7 +526,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-background));
+  color: var(--header-color-foreground);
 }
 
 .header__submenu {
@@ -579,7 +579,7 @@ details-disclosure > details {
 }
 
 .shopify-section-group-header-group.section-header {
-  position: absolute;
+  position: var(--header-position);
   margin-top: var(--announcement-bar-high);
   width: 100%;
 }
