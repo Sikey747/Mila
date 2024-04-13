@@ -243,7 +243,7 @@
         "column_xwkYET"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "More for you. Tango with us.",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -252,7 +252,7 @@
         "background_style": "primary",
         "button_label": "Button label",
         "button_link": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
