@@ -206,77 +206,6 @@
         "isTagsShow": true
       }
     },
-    "featured_product_DLB7Vr": {
-      "type": "featured-product",
-      "blocks": {
-        "text_ANjCVF": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_KGUzDc": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_KhLR6K": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "variant_picker_zdDNFX": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_jjEQt9": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "buy_buttons_tV9XUD": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_LXpGRy": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "text_ANjCVF",
-        "title_KGUzDc",
-        "price_KhLR6K",
-        "variant_picker_zdDNFX",
-        "quantity_selector_jjEQt9",
-        "buy_buttons_tV9XUD",
-        "share_LXpGRy"
-      ],
-      "settings": {
-        "product": "messina-panel-line-multifit-one-piece",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "multicolumn_n3iXPc": {
       "type": "multicolumn",
       "blocks": {
@@ -371,6 +300,111 @@
         "isAnimationOn": true,
         "rightAnimation": true
       }
+    },
+    "featured_product_DLB7Vr": {
+      "type": "featured-product",
+      "blocks": {
+        "text_ANjCVF": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_KGUzDc": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_KhLR6K": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_zdDNFX": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_jjEQt9": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_tV9XUD": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_LXpGRy": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_ANjCVF",
+        "title_KGUzDc",
+        "price_KhLR6K",
+        "variant_picker_zdDNFX",
+        "quantity_selector_jjEQt9",
+        "buy_buttons_tV9XUD",
+        "share_LXpGRy"
+      ],
+      "settings": {
+        "product": "messina-panel-line-multifit-one-piece",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "new_articles_Lmz6BM": {
+      "type": "new-articles",
+      "blocks": {
+        "block_article_EMTweC": {
+          "type": "block-article",
+          "settings": {
+            "article": "news\/our-high-summer-lookbook"
+          }
+        },
+        "block_article_nVrPPM": {
+          "type": "block-article",
+          "settings": {
+            "article": "news\/fairy-floss-summer-skies"
+          }
+        },
+        "block_article_prEbCN": {
+          "type": "block-article",
+          "settings": {
+            "article": "news\/overswim-light-breathable-in-the-summer-heat"
+          }
+        }
+      },
+      "block_order": [
+        "block_article_EMTweC",
+        "block_article_nVrPPM",
+        "block_article_prEbCN"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "section-headers": "from the megazine",
+        "section-links-text": "View All",
+        "button-text": "Read more"
+      }
     }
   },
   "order": [
@@ -381,8 +415,9 @@
     "section_collection_review_F4aL4t",
     "text_on_bacground_wF4KHV",
     "section_collection_review_UYcbic",
-    "featured_product_DLB7Vr",
     "multicolumn_n3iXPc",
-    "section_marquee_4NkU7H"
+    "section_marquee_4NkU7H",
+    "featured_product_DLB7Vr",
+    "new_articles_Lmz6BM"
   ]
 }
