@@ -21,10 +21,10 @@
             "show_text_box": true
           }
         },
-        "slide_b6GWKU": {
+        "slide_wrQkPm": {
           "type": "slide",
           "settings": {
-            "slide_collection": "bages",
+            "slide_collection": "best-sellers",
             "heading": "Image slide",
             "link": "",
             "show_text_box": true
@@ -34,7 +34,7 @@
       "block_order": [
         "slide_MCqxzd",
         "slide_gqhBrr",
-        "slide_b6GWKU"
+        "slide_wrQkPm"
       ],
       "settings": {
         "auto_rotate": true,
