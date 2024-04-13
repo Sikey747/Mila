@@ -26,6 +26,9 @@ const startPriceRangeSlider = () => {
   sliderPrice.noUiSlider.on("end", function (values, handle) {
     inputMin.setAttribute("value", +values[0]);
     inputMax.setAttribute("value", +values[1]);
+    const priceRange = document.querySelector("PriceRange");
+    const priceRangeEvent = new Event("input");
+    priceRange.dispatchEvent(priceRangeEvent);
   });
 };
 

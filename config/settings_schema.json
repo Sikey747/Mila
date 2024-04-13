@@ -1,10 +1,18 @@
 [
   {
+    "name": "theme_info",
+    "theme_name": "Mila",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
     "name": "Color Swatches by WebSensePro",
     "settings": [
       {
         "type": "paragraph",
-        "content": "Support WebSensePro by [Subscribing our Channel](https:\/\/youtube.com\/@websensepro?sub_confirmation=1)"
+        "content": "Support WebSensePro by [Subscribing our Channel](https://youtube.com/@websensepro?sub_confirmation=1)"
       },
       {
         "type": "text",
@@ -43,7 +51,7 @@
       },
       {
         "type": "paragraph",
-        "content": "You can also add [image files](\/admin\/content\/files?selectedView=all&media_type=Image) instead of using colors, in lowercase with spaces replaced by hyphens. Example: Green kaki: green-kaki.png"
+        "content": "You can also add [image files](/admin/content/files?selectedView=all&media_type=Image) instead of using colors, in lowercase with spaces replaced by hyphens. Example: Green kaki: green-kaki.png"
       },
       {
         "type": "select",
@@ -81,14 +89,6 @@
         "default": 40
       }
     ]
-  },
-  {
-    "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "13.0.1",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
