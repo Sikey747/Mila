@@ -39,7 +39,8 @@
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 10,
-        "color_scheme": ""
+        "color_scheme": "",
+        "button_label": "Shop New Arrivals"
       }
     },
     "slide_collections_NX3HiE": {
@@ -123,7 +124,10 @@
         "color_scheme": "",
         "collection": "the-elite-story",
         "button-text": "Shop the collection",
-        "revers_desktop": false
+        "revers_desktop": false,
+        "isButtonShow": true,
+        "isStarsShow": true,
+        "isTagsShow": true
       }
     },
     "section_image_and_text_fAXz3y": {
@@ -196,7 +200,10 @@
         "color_scheme": "",
         "collection": "maximum-impact",
         "button-text": "Shop the collection",
-        "revers_desktop": true
+        "revers_desktop": true,
+        "isButtonShow": true,
+        "isStarsShow": true,
+        "isTagsShow": true
       }
     }
   },
