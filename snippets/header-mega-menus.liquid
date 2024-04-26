@@ -34,7 +34,7 @@
 </div>
 
 <style>
-  .mega_menu_open header.mege-menu {
+  header.mega_menu_open .mege-menu {
     top: 100%;
     opacity: 1;
     visibility: visible;
@@ -160,11 +160,10 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const megaMenuBtn = document.querySelectorAll('details.mega-menu');
-    // const header = document.querySelector('header');
-    const stickyheader = document.querySelector('sticky-header');
+    const header = document.querySelector('header');
 
     const toogleMegaMenu = () => {
-      stickyheader.classList.toggle('mega_menu_open');
+      header.classList.toggle('mega_menu_open');
       document.querySelector('.content-for-layout').classList.remove('mega_menu_open');
     };
 
@@ -176,7 +175,7 @@
 
     window.addEventListener('click', (event) => {
       if (!event.target.closest('header')) {
-        stickyheader.classList.remove('mega_menu_open');
+        header.classList.remove('mega_menu_open');
         document.querySelector('.content-for-layout').classList.remove('mega_menu_open');
       }
     });
