@@ -336,8 +336,8 @@ class PriceRange extends HTMLElement {
   }
 
   onRangeChange(event) {
-    // this.adjustToValidValues(event.currentTarget);
-    // this.setMinAndMaxValues();
+    this.adjustToValidValues(event.currentTarget);
+    this.setMinAndMaxValues();
   }
 
   setMinAndMaxValues() {
