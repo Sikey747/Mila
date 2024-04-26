@@ -160,10 +160,11 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const megaMenuBtn = document.querySelectorAll('details.mega-menu');
-    const header = document.querySelector('sticky-header');
+    // const header = document.querySelector('header');
+    const stickyheader = document.querySelector('sticky-header');
 
     const toogleMegaMenu = () => {
-      header.classList.toggle('mega_menu_open');
+      stickyheader.classList.toggle('mega_menu_open');
       document.querySelector('.content-for-layout').classList.remove('mega_menu_open');
     };
 
@@ -175,7 +176,7 @@
 
     window.addEventListener('click', (event) => {
       if (!event.target.closest('header')) {
-        header.classList.remove('mega_menu_open');
+        stickyheader.classList.remove('mega_menu_open');
         document.querySelector('.content-for-layout').classList.remove('mega_menu_open');
       }
     });
