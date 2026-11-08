@@ -1,4 +1,14 @@
 <div class="collection-card ibg">
-  {{ link. | image_url: width: '500px' | image_tag: loading: 'lazy' }}
+  {{ link | image_url: width: '500px' | image_tag: loading: 'lazy' }}
   <a href="{{ link.url }}">{{ link.title }}</a>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ link. | image_url: width: '500px' | image_tag: loading: 'lazy' }}"
+  to: "{{ link | image_url: width: '500px' | image_tag: loading: 'lazy' }}"
+  position: 36..103
+{% endcomment %}

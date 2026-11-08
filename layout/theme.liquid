@@ -254,7 +254,7 @@
     {% endstyle %}
 
     {% comment %} castom fonts {% endcomment %}
-    {% if 'Big Caslon Medium.ttf' | asset_url %}
+    {% if 'Big Caslon Medium.ttf' %}
       <style data-font>
         @font-face {
           font-family: 'Big Caslon Medium';
@@ -383,3 +383,13 @@
     {%- endif -%}
   </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if 'Big Caslon Medium.ttf' | asset_url %}"
+  to: "{% if 'Big Caslon Medium.ttf' %}"
+  position: 16113..16145
+{% endcomment %}
